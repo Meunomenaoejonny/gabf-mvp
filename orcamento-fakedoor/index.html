@@ -1,264 +1,259 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="description" content="Em breve: gere orçamento PDF profissional em minutos. Entre na lista de espera." />
-      <title>Gerador de Orçamento PDF — Em breve | GABF</title>
-    <style>
-          :root {
-                  --bg: #faf8f5;
-                  --surface: #ffffff;
-                  --ink: #1c1917;
-                  --muted: #78716c;
-                  --line: #e7e5e4;
-                  --accent: #0d9488;
-                  --accent-dark: #0f766e;
-                  --accent-soft: #ccfbf1;
-                  --warn-bg: #fff7ed;
-                  --warn-border: #fdba74;
-                  --radius: 14px;
-                  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
-          }
-          @media (prefers-color-scheme: dark) {
-                  :root {
-                            --bg: #0c0a09;
-                            --surface: #1c1917;
-                            --ink: #fafaf9;
-                            --muted: #a8a29e;
-                            --line: #292524;
-                            --accent: #2dd4bf;
-                            --accent-dark: #14b8a6;
-                            --accent-soft: #134e4a;
-                            --warn-bg: #292524;
-                            --warn-border: #a16207;
-                  }
-          }
-          * { box-sizing: border-box; margin: 0; padding: 0; }
-          body {
-                  font-family: var(--font);
-                  background: var(--bg);
-                  color: var(--ink);
-                  line-height: 1.6;
-                  min-height: 100vh;
-          }
-          .hero {
-                  max-width: 720px;
-                  margin: 0 auto;
-                  padding: 2.5rem 1.25rem 1.5rem;
-          }
-          .pill {
-                  display: inline-block;
-                  font-size: 0.72rem;
-                  font-weight: 700;
-                  letter-spacing: 0.06em;
-                  text-transform: uppercase;
-                  color: var(--accent-dark);
-                  background: var(--accent-soft);
-                  padding: 0.3rem 0.7rem;
-                  border-radius: 999px;
-                  margin-bottom: 1rem;
-          }
-          h1 {
-                  font-size: clamp(1.65rem, 4.5vw, 2.15rem);
-                  line-height: 1.2;
-                  letter-spacing: -0.03em;
-                  margin-bottom: 0.75rem;
-          }
-          .sub {
-                  font-size: 1.05rem;
-                  color: var(--muted);
-                  margin-bottom: 1.5rem;
-                  max-width: 38rem;
-          }
-          .problem {
-                  background: var(--surface);
-                  border: 1px solid var(--line);
-                  border-radius: var(--radius);
-                  padding: 1.1rem 1.25rem;
-                  margin-bottom: 1.75rem;
-                  font-size: 0.95rem;
-          }
-          .problem strong { color: var(--ink); }
-          .features {
-                  list-style: none;
-                  display: grid;
-                  gap: 0.65rem;
-                  margin-bottom: 2rem;
-          }
-          .features li {
-                  display: flex;
-                  gap: 0.7rem;
-                  align-items: flex-start;
-                  font-size: 0.95rem;
-                  background: var(--surface);
-                  border: 1px solid var(--line);
-                  border-radius: 10px;
-                  padding: 0.85rem 1rem;
-          }
-          .features .ico {
-                  flex-shrink: 0;
-                  width: 1.5rem;
-                  height: 1.5rem;
-                  border-radius: 6px;
-                  background: var(--accent-soft);
-                  color: var(--accent-dark);
-                  display: grid;
-                  place-items: center;
-                  font-size: 0.8rem;
-                  font-weight: 700;
-          }
-          .form-card {
-                  background: var(--surface);
-                  border: 1px solid var(--line);
-                  border-radius: var(--radius);
-                  padding: 1.5rem 1.25rem;
-                  box-shadow: 0 8px 30px color-mix(in srgb, var(--ink) 4%, transparent);
-          }
-          .form-card h2 {
-                  font-size: 1.15rem;
-                  margin-bottom: 0.35rem;
-          }
-          .form-card .hint {
-                  font-size: 0.85rem;
-                  color: var(--muted);
-                  margin-bottom: 1.25rem;
-          }
-          label {
-                  display: block;
-                  font-size: 0.85rem;
-                  font-weight: 600;
-                  margin-bottom: 0.35rem;
-          }
-          .field { margin-bottom: 1rem; }
-          input[type="email"], select {
-                  width: 100%;
-                  padding: 0.75rem 0.9rem;
-                  font-size: 1rem;
-                  font-family: inherit;
-                  color: var(--ink);
-                  background: var(--bg);
-                  border: 1px solid var(--line);
-                  border-radius: 8px;
-                  outline: none;
-          }
-          input:focus, select:focus { border-color: var(--accent); }
-          .radio-group {
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: 0.5rem;
-          }
-          .radio-group label {
-                  font-weight: 500;
-                  display: flex;
-                  align-items: center;
-                  gap: 0.4rem;
-                  padding: 0.55rem 0.85rem;
-                  border: 1px solid var(--line);
-                  border-radius: 8px;
-                  cursor: pointer;
-                  background: var(--bg);
-                  font-size: 0.9rem;
-          }
-          .radio-group input { accent-color: var(--accent); }
-          button[type="submit"] {
-                  width: 100%;
-                  margin-top: 0.5rem;
-                  padding: 0.9rem 1.2rem;
-                  font-size: 1rem;
-                  font-weight: 700;
-                  font-family: inherit;
-                  color: #fff;
-                  background: var(--accent);
-                  border: none;
-                  border-radius: 8px;
-                  cursor: pointer;
-                  transition: background 0.15s;
-          }
-          button[type="submit"]:hover { background: var(--accent-dark); }
-          .dev-note {
-                  margin-top: 1rem;
-                  font-size: 0.75rem;
-                  color: var(--muted);
-                  padding: 0.65rem 0.8rem;
-                  background: var(--warn-bg);
-                  border: 1px dashed var(--warn-border);
-                  border-radius: 8px;
-          }
-          .dev-note code {
-                  font-size: 0.7rem;
-                  word-break: break-all;
-          }
-          .success {
-                  display: none;
-                  text-align: center;
-                  padding: 1.5rem 0.5rem;
-          }
-          .success.show { display: block; }
-          .success .check {
-                  width: 3rem;
-                  height: 3rem;
-                  margin: 0 auto 1rem;
-                  border-radius: 50%;
-                  background: var(--accent-soft);
-                  color: var(--accent-dark);
-                  display: grid;
-                  place-items: center;
-                  font-size: 1.5rem;
-                  font-weight: 700;
-          }
-          form.hide { display: none; }
-          footer {
-                  max-width: 720px;
-                  margin: 0 auto;
-                  padding: 2rem 1.25rem;
-                  font-size: 0.75rem;
-                  color: var(--muted);
-                  text-align: center;
-          }
-          .fake-note {
-                  font-size: 0.8rem;
-                  color: var(--muted);
-                  margin-top: 1.25rem;
-                  text-align: center;
-          }
-        </style>
-  </head>
-  <body>
-      <main class="hero">
-            <span class="pill">Lista de espera · Em breve</span>span>
-            <h1>Gere orçamento em PDF em minutos</h1>
-          <p class="sub">Chega de Word bagunçado e WhatsApp sem valor total. Em breve: um gerador simples para autônomos e MEIs — logo, dados do cliente, itens e PDF pronto.</p>p>
-      
-          <div class="problem">
-                <strong>O problema:</strong> você perde tempo montando orçamento “bonitinho”, esquece validade ou condições, e o cliente some. Ferramentas pesadas cobram mensalidade; planilhas ficam feias no celular.
-          </div>div>
-      
-          <ul class="features" aria-label="Funcionalidades planejadas">
-                <li><span class="ico" aria-hidden="true">1</span>span><span><strong>Modelo limpo</strong>strong> — cabeçalho com seus dados, itens, totais e validade.</span></li>
-                <li><span class="ico" aria-hidden="true">2</span><span><strong>PDF em 1 clique</strong> — baixe e envie por WhatsApp ou e-mail.</span></li>
-                <li><span class="ico" aria-hidden="true">3</span><span><strong>Mobile-first</strong> — preencha no celular entre um serviço e outro.</span></li>
-                <li><span class="ico" aria-hidden="true">4</span>span><span><strong>Sem mensalidade (plano one-shot)</strong>strong> — pagou, usou. Detalhes na lista de espera.</span></li>
-          </ul>ul>
-      
-          <div class="form-card" id="waitlist">
-                <h2>Entre na lista de espera</h2>
-                <p class="hint">Avise-me quando lançar. Também queremos saber se faria sentido um preço one-shot de R$&nbsp;29.</p>p>
-                <p style="margin-top:1rem"><a href="https://docs.google.com/forms/d/e/1FAIpQLSed37MIb1bjk8pfaWKv5vdaVoL6jQsiCLxeNRUR186t09Biew/viewform" target="_blank" rel="noopener" style="display:inline-block;padding:0.85rem 1.25rem;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;">Quero ser avisado(a) — abrir formulário</a>a></p>p>
-                <p class="dev-note" style="margin-top:1rem;">Respostas no Google Forms (EXP-012). Esta página não inventa leads.</p>p>
-          </div>div>
-      
-          <p class="fake-note">Produto em validação — ainda não há gerador ativo nesta página. Sem depoimentos inventados.</p>p>
-      </main>main>
-  
-    <footer>
-          GABF · OPP-012 · EXP-012-2026-09-28 · VERSION 0.1.0 · Fake-door / waitlist
-    </footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Em breve: gere orçamento PDF profissional em minutos. Entre na lista de espera." />
+  <title>Gerador de Orçamento PDF — Em breve | GABF</title>
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --ink: #1c1917;
+      --muted: #78716c;
+      --line: #e7e5e4;
+      --accent: #0d9488;
+      --accent-dark: #0f766e;
+      --accent-soft: #ccfbf1;
+      --warn-bg: #fff7ed;
+      --warn-border: #fdba74;
+      --radius: 14px;
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0a09;
+        --surface: #1c1917;
+        --ink: #fafaf9;
+        --muted: #a8a29e;
+        --line: #292524;
+        --accent: #2dd4bf;
+        --accent-dark: #14b8a6;
+        --accent-soft: #134e4a;
+        --warn-bg: #292524;
+        --warn-border: #a16207;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 1.5rem;
+    }
+    .pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(1.65rem, 4.5vw, 2.15rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      max-width: 38rem;
+    }
+    .problem {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.95rem;
+    }
+    .problem strong { color: var(--ink); }
+    .features {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+    }
+    .features li {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      font-size: 0.95rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+    }
+    .features .ico {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      display: grid;
+      place-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem;
+      box-shadow: 0 8px 30px color-mix(in srgb, var(--ink) 4%, transparent);
+    }
+    .form-card h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.35rem;
+    }
+    .form-card .hint {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    .field { margin-bottom: 1rem; }
+    input[type="email"], select {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      outline: none;
+    }
+    input:focus, select:focus { border-color: var(--accent); }
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .radio-group label {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      cursor: pointer;
+      background: var(--bg);
+      font-size: 0.9rem;
+    }
+    .radio-group input { accent-color: var(--accent); }
+    button[type="submit"] {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.9rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    button[type="submit"]:hover { background: var(--accent-dark); }
+    .dev-note {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      padding: 0.65rem 0.8rem;
+      background: var(--warn-bg);
+      border: 1px dashed var(--warn-border);
+      border-radius: 8px;
+    }
+    .dev-note code {
+      font-size: 0.7rem;
+      word-break: break-all;
+    }
+    .success {
+      display: none;
+      text-align: center;
+      padding: 1.5rem 0.5rem;
+    }
+    .success.show { display: block; }
+    .success .check {
+      width: 3rem;
+      height: 3rem;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    form.hide { display: none; }
+    footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .fake-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 1.25rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <span class="pill">Lista de espera · Em breve</span>
+    <h1>Gere orçamento em PDF em minutos</h1>
+    <p class="sub">Chega de Word bagunçado e WhatsApp sem valor total. Em breve: um gerador simples para autônomos e MEIs — logo, dados do cliente, itens e PDF pronto.</p>
 
-  </body>
-</html>html>
+    <div class="problem">
+      <strong>O problema:</strong> você perde tempo montando orçamento “bonitinho”, esquece validade ou condições, e o cliente some. Ferramentas pesadas cobram mensalidade; planilhas ficam feias no celular.
+    </div>
 
-    </footer></span></li></li></strong></span></span></li></strong></h1>
-  </body>
-    </style></title>
-  </head>
+    <ul class="features" aria-label="Funcionalidades planejadas">
+      <li><span class="ico" aria-hidden="true">1</span><span><strong>Modelo limpo</strong> — cabeçalho com seus dados, itens, totais e validade.</span></li>
+      <li><span class="ico" aria-hidden="true">2</span><span><strong>PDF em 1 clique</strong> — baixe e envie por WhatsApp ou e-mail.</span></li>
+      <li><span class="ico" aria-hidden="true">3</span><span><strong>Mobile-first</strong> — preencha no celular entre um serviço e outro.</span></li>
+      <li><span class="ico" aria-hidden="true">4</span><span><strong>Sem mensalidade (plano one-shot)</strong> — pagou, usou. Detalhes na lista de espera.</span></li>
+    </ul>
+
+    <div class="form-card" id="waitlist">
+      <h2>Entre na lista de espera</h2>
+      <p class="hint">Avise-me quando lançar. Também queremos saber se faria sentido um preço one-shot de R$&nbsp;29.</p>
+      <p style="margin-top:1rem"><a href="https://docs.google.com/forms/d/e/1FAIpQLSed37MIb1bjk8pfaWKv5vdaVoL6jQsiCLxeNRUR186t09Biew/viewform" target="_blank" rel="noopener" style="display:inline-block;padding:0.85rem 1.25rem;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;">Quero ser avisado(a) — abrir formulário</a></p>
+      <p class="dev-note" style="margin-top:1rem;">Respostas no Google Forms (EXP-012). Esta página não inventa leads.</p>
+    </div>
+
+    <p class="fake-note">Produto em validação — ainda não há gerador ativo nesta página. Sem depoimentos inventados.</p>
+  </main>
+
+  <footer>
+    GABF · OPP-012 · EXP-012-2026-09-28 · VERSION 0.1.0 · Fake-door / waitlist
+  </footer>
+
+</body>
+</html>
