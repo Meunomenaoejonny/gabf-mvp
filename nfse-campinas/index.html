@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kit checklist NFS-e Nacional para prestadores em Campinas — prazos out/nov/dez/2026 e jan/2027. Lista de espera gratuita. Não é assessoria fiscal." />
+  <title>Kit transição NFS-e Nacional / Campinas — GABF</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --surface2: #243044;
+      --border: #2d3a4f;
+      --text: #e8eef6;
+      --muted: #8b9cb3;
+      --accent: #3d9cf0;
+      --accent-dim: #2a6fad;
+      --ok: #3ecf8e;
+      --warn: #f0b429;
+      --radius: 12px;
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --surface: #ffffff;
+        --surface2: #eef2f7;
+        --border: #d0dae6;
+        --text: #1a2332;
+        --muted: #5a6b80;
+        --accent: #1a7fd4;
+        --accent-dim: #1566ab;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+      padding: 1.25rem;
+    }
+    .wrap { max-width: 640px; margin: 0 auto; }
+    header { margin-bottom: 1.5rem; }
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 15%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      margin-bottom: 0.65rem;
+    }
+    h1 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+    .lead { color: var(--muted); font-size: 0.95rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .card h2 {
+      font-size: 0.95rem;
+      margin-bottom: 0.85rem;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .card p, .card li { font-size: 0.92rem; }
+    .card ul { padding-left: 1.15rem; margin: 0.4rem 0 0; }
+    .card li { margin-bottom: 0.35rem; color: var(--text); }
+    .timeline {
+      display: grid;
+      gap: 0.65rem;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr;
+      gap: 0.75rem;
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 0.75rem 0.9rem;
+      align-items: start;
+    }
+    @media (max-width: 520px) {
+      .step { grid-template-columns: 1fr; }
+    }
+    .step .when {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+    .step .what { font-size: 0.85rem; color: var(--text); }
+    .kit-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0.55rem;
+    }
+    .kit-list li {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 0.75rem 0.9rem;
+      margin: 0;
+    }
+    .kit-list .ico {
+      flex-shrink: 0;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 6px;
+      background: color-mix(in srgb, var(--ok) 20%, transparent);
+      color: var(--ok);
+      display: grid;
+      place-items: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .disclaimer {
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-left: 3px solid var(--warn);
+      padding: 0.75rem 0.9rem;
+      background: color-mix(in srgb, var(--warn) 8%, var(--surface));
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1rem;
+    }
+    .disclaimer strong { color: var(--text); }
+    .disclaimer a { color: var(--accent); }
+    .cta {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.9rem 1.2rem;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .cta:hover { background: var(--accent-dim); }
+    .cta-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 0.5rem; }
+    .sources {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .sources a { color: var(--accent); word-break: break-all; }
+    .sources li { margin-bottom: 0.4rem; }
+    footer {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">Lista de espera · v0.1.0 · Campinas/SP</span>
+      <h1>Kit transição NFS-e Nacional</h1>
+      <p class="lead">Checklist por etapa (out → jan) + links oficiais + lembretes de Calendar para prestadores Simples/MEI em Campinas. <strong>Não é assessoria.</strong></p>
+    </header>
+
+    <div class="disclaimer" role="note">
+      <strong>Aviso importante:</strong> este material <strong>não é contabilidade, assessoria jurídica nem fiscal</strong>. Prazos e regras mudam. Confirme sempre na
+      <a href="https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/agosto/simples-nacional-nfs-e-nacional-sera-obrigatoria-para-me-e-epp-a-partir-de-1o-de-novembro-de-2026" target="_blank" rel="noopener">Receita Federal (Res. CGSN 191/2026)</a>,
+      no
+      <a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">Emissor Nacional</a>
+      e na Prefeitura / Secretaria de Finanças de Campinas. Não tome decisões só com base nesta página.
+    </div>
+
+    <div class="card">
+      <h2>O problema</h2>
+      <p>A partir de <strong>1º de novembro de 2026</strong>, ME e EPP optantes do <strong>Simples Nacional</strong> que prestam serviços sujeitos a NFS-e devem emitir pelo <strong>Emissor Nacional</strong> (Res. CGSN 191/2026).</p>
+      <p style="margin-top:0.65rem">Em <strong>Campinas</strong>, a migração é por etapas (outubro → janeiro/2027, com IBS/CBS). Dois sistemas coexistem na transição — fácil emitir no lugar errado.</p>
+    </div>
+
+    <div class="card">
+      <h2>Para quem</h2>
+      <ul>
+        <li>Prestadores ME/EPP Simples em Campinas e interior-SP</li>
+        <li>MEI que precisa revisar acesso ao padrão nacional</li>
+        <li>Quem quer um roteiro "o que fazer esta semana", sem mensalidade</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Cronograma (resumo)</h2>
+      <div class="timeline">
+        <div class="step">
+          <span class="when">1º/10/2026</span>
+          <span class="what">Campinas: novo emissor para ISS na regra geral (exceto atividades com prazo em dez.).</span>
+        </div>
+        <div class="step">
+          <span class="when">1º/11/2026</span>
+          <span class="what"><strong>Simples ME/EPP:</strong> Emissor Nacional obrigatório e exclusivo (federal + alinhamento Campinas).</span>
+        </div>
+        <div class="step">
+          <span class="when">1º/12/2026</span>
+          <span class="what">Campinas: plataformas digitais, dados/software/conteúdo internet, transporte coletivo municipal (ver lista oficial/local).</span>
+        </div>
+        <div class="step">
+          <span class="when">1º/01/2027</span>
+          <span class="what">Simples: efeitos IBS/CBS no documento fiscal + continuar no Emissor Nacional.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>O que tem no kit</h2>
+      <ul class="kit-list">
+        <li><span class="ico" aria-hidden="true">✓</span><span>Checklist por etapa: <strong>out / nov / dez / jan</strong></span></li>
+        <li><span class="ico" aria-hidden="true">✓</span><span>Links oficiais (RFB, Portal NFS-e, Emissor Nacional)</span></li>
+        <li><span class="ico" aria-hidden="true">✓</span><span>Sugestões de lembretes para Google Calendar</span></li>
+        <li><span class="ico" aria-hidden="true">✓</span><span>Linguagem leiga, one-shot — sem mensalidade</span></li>
+      </ul>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:0.85rem">Preço futuro estimado R$&nbsp;27–67 — <strong>não validado</strong>. Nesta fase: entre na lista e receba o checklist quando liberarmos.</p>
+    </div>
+
+    <div class="card">
+      <h2>Quero o kit NFS-e Campinas</h2>
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Deixe e-mail no formulário. Sem ads pagos neste teste. Sem checkout nesta versão (Nível 0).</p>
+      <a class="cta" id="ctaForm" href="https://docs.google.com/forms/d/e/1FAIpQLSetAvZJsOs86qdV1pUT5QLOtzPQ0bef2vhWU4--j0qV0chFrQ/viewform" target="_blank" rel="noopener">
+        Quero o kit NFS-e Campinas (lista de espera)
+      </a>
+      <p class="cta-note" id="ctaNote">Formulário ao vivo. Sem spam — só avisamos quando o checklist estiver liberado.</p>
+    </div>
+
+    <div class="card">
+      <h2>Fontes</h2>
+      <ul class="sources">
+        <li><a href="https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/agosto/simples-nacional-nfs-e-nacional-sera-obrigatoria-para-me-e-epp-a-partir-de-1o-de-novembro-de-2026" target="_blank" rel="noopener">RFB — NFS-e Nacional obrigatória ME/EPP a partir de 1º/11/2026</a></li>
+        <li><a href="https://sampi.net.br/campinas/noticias/3006919/campinas/2026/09/campinas-muda-emissao-de-notas-fiscais-veja-os-novos-prazos" target="_blank" rel="noopener">Sampi Campinas — novos prazos (27/09/2026)</a></li>
+        <li><a href="https://www.gov.br/nfse/pt-br/pagina-inicial" target="_blank" rel="noopener">Portal NFS-e (gov.br)</a></li>
+        <li><a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">Emissor Nacional</a></li>
+      </ul>
+    </div>
+
+    <footer>
+      GABF · OPP-013 · EXP-013-2026-09-28 · VERSION 0.1.0<br />
+      Zero métricas de venda inventadas · Checkout = DESCONHECIDO neste ciclo
+    </footer>
+  </div>
+</body>
+</html>
