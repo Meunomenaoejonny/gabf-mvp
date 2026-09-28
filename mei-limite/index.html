@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="Calculadora estimativa do limite de faturamento MEI — ferramenta gratuita, sem assessoria." />
+      <title>Calculadora Limite MEI — GABF</title>
+    <style>
+          :root {
+                  --bg: #0f1419;
+                  --surface: #1a2332;
+                  --surface2: #243044;
+                  --border: #2d3a4f;
+                  --text: #e8eef6;
+                  --muted: #8b9cb3;
+                  --accent: #3d9cf0;
+                  --accent-dim: #2a6fad;
+                  --ok: #3ecf8e;
+                  --warn: #f0b429;
+                  --danger: #f07178;
+                  --radius: 12px;
+                  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+          }
+          @media (prefers-color-scheme: light) {
+                  :root {
+                            --bg: #f4f7fb;
+                            --surface: #ffffff;
+                            --surface2: #eef2f7;
+                            --border: #d0dae6;
+                            --text: #1a2332;
+                            --muted: #5a6b80;
+                            --accent: #1a7fd4;
+                            --accent-dim: #1566ab;
+                  }
+          }
+          * { box-sizing: border-box; margin: 0; padding: 0; }
+          body {
+                  font-family: var(--font);
+                  background: var(--bg);
+                  color: var(--text);
+                  line-height: 1.55;
+                  min-height: 100vh;
+                  padding: 1.25rem;
+          }
+          .wrap { max-width: 640px; margin: 0 auto; }
+          header { margin-bottom: 1.5rem; }
+          .badge {
+                  display: inline-block;
+                  font-size: 0.7rem;
+                  font-weight: 600;
+                  letter-spacing: 0.04em;
+                  text-transform: uppercase;
+                  color: var(--accent);
+                  background: color-mix(in srgb, var(--accent) 15%, transparent);
+                  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+                  padding: 0.2rem 0.55rem;
+                  border-radius: 999px;
+                  margin-bottom: 0.65rem;
+          }
+          h1 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+          .lead { color: var(--muted); font-size: 0.95rem; }
+          .card {
+                  background: var(--surface);
+                  border: 1px solid var(--border);
+                  border-radius: var(--radius);
+                  padding: 1.25rem;
+                  margin-bottom: 1rem;
+          }
+          .card h2 { font-size: 0.95rem; margin-bottom: 1rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+          label {
+                  display: block;
+                  font-size: 0.85rem;
+                  font-weight: 500;
+                  margin-bottom: 0.35rem;
+                  color: var(--text);
+          }
+          .hint { font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-top: 0.25rem; }
+          .field { margin-bottom: 1rem; }
+          .field:last-child { margin-bottom: 0; }
+          input, select {
+                  width: 100%;
+                  padding: 0.7rem 0.85rem;
+                  font-size: 1rem;
+                  font-family: inherit;
+                  color: var(--text);
+                  background: var(--surface2);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                  outline: none;
+                  transition: border-color 0.15s;
+          }
+          input:focus, select:focus { border-color: var(--accent); }
+          .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+          @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+          .results { display: grid; gap: 0.75rem; }
+          .stat {
+                  background: var(--surface2);
+                  border-radius: 8px;
+                  padding: 0.9rem 1rem;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: baseline;
+                  gap: 0.5rem;
+                  flex-wrap: wrap;
+          }
+          .stat .label { font-size: 0.85rem; color: var(--muted); }
+          .stat .value { font-size: 1.15rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+          .bar-wrap {
+                  height: 12px;
+                  background: var(--surface2);
+                  border-radius: 999px;
+                  overflow: hidden;
+                  margin: 0.5rem 0 0.25rem;
+          }
+          .bar {
+                  height: 100%;
+                  width: 0%;
+                  border-radius: 999px;
+                  background: var(--ok);
+                  transition: width 0.35s ease, background 0.35s;
+          }
+          .bar.warn { background: var(--warn); }
+          .bar.danger { background: var(--danger); }
+          .status-msg {
+                  font-size: 0.9rem;
+                  padding: 0.75rem 0.9rem;
+                  border-radius: 8px;
+                  border: 1px solid var(--border);
+                  background: var(--surface2);
+          }
+          .status-msg.ok { border-color: color-mix(in srgb, var(--ok) 40%, var(--border)); }
+          .status-msg.warn { border-color: color-mix(in srgb, var(--warn) 40%, var(--border)); }
+          .status-msg.danger { border-color: color-mix(in srgb, var(--danger) 40%, var(--border)); }
+          .disclaimer {
+                  font-size: 0.8rem;
+                  color: var(--muted);
+                  border-left: 3px solid var(--warn);
+                  padding: 0.75rem 0.9rem;
+                  background: color-mix(in srgb, var(--warn) 8%, var(--surface));
+                  border-radius: 0 8px 8px 0;
+                  margin-bottom: 1rem;
+          }
+          .disclaimer strong { color: var(--text); }
+          .disclaimer a { color: var(--accent); }
+          .cta {
+                  display: block;
+                  text-align: center;
+                  text-decoration: none;
+                  background: var(--accent);
+                  color: #fff;
+                  font-weight: 600;
+                  padding: 0.9rem 1.2rem;
+                  border-radius: 8px;
+                  transition: background 0.15s;
+          }
+          .cta:hover { background: var(--accent-dim); }
+          .cta-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 0.5rem; }
+          footer {
+                  margin-top: 1.5rem;
+                  padding-top: 1rem;
+                  border-top: 1px solid var(--border);
+                  font-size: 0.75rem;
+                  color: var(--muted);
+                  text-align: center;
+          }
+          footer a { color: var(--accent); }
+          .tag-est {
+                  font-size: 0.65rem;
+                  font-weight: 700;
+                  letter-spacing: 0.04em;
+                  color: var(--warn);
+                  vertical-align: middle;
+          }
+        </style>
+  </head>
+  <body>
+      <div class="wrap">
+            <header>
+                    <span class="badge">Ferramenta gratuita · v0.1.0</span>span>
+                    <h1>Calculadora de limite MEI</h1>
+                  <p class="lead">Veja quanto do limite anual de faturamento você já usou e uma projeção linear até o fim do ano. <strong>Estimativa apenas — não é assessoria.</strong></p>p>
+            </header>
+      
+          <div class="disclaimer" role="note">
+                <strong>Aviso importante:</strong> esta ferramenta <strong>não é contabilidade, assessoria jurídica nem fiscal</strong>. Regras do MEI mudam. Confirme o limite vigente e suas obrigações no
+                <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor" target="_blank" rel="noopener">Portal do Empreendedor (gov.br)</a>a>
+                e na
+                <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/servicos-para-mei/declaracao-anual-de-faturamento" target="_blank" rel="noopener">página da DASN-SIMEI</a>a>.
+                Não tome decisões só com base nesta página.
+          </div>div>
+      
+          <div class="card">
+                <h2>Seus dados</h2>
+                <div class="field">
+                        <label for="faturamento">Faturamento acumulado no ano (R$)</label>label>
+                        <input type="number" id="faturamento" min="0" step="0.01" placeholder="Ex.: 45000" inputmode="decimal" />
+                        <p class="hint">Receita bruta acumulada de janeiro até agora (ou desde a abertura no ano).</p>p>
+                </div>div>
+                <div class="row">
+                        <div class="field">
+                                  <label for="mes">Mês atual</label>label>
+                                  <select id="mes"></select>select>
+                        </div>div>
+                        <div class="field">
+                                  <label for="limite">Limite anual (R$) <span class="tag-est">ESTIMATIVA</span>span></label>label>
+                                  <input type="number" id="limite" min="1" step="1" value="81000" />
+                                  <p class="hint">Padrão R$ 81.000 (MEI padrão, vigente em 2026 segundo <a href="https://www.gov.br/memp/pt-br/teto-do-mei" target="_blank" rel="noopener" style="color:var(--accent)">gov.br/memp</a>a>). Editável — confira o limite oficial.</p>p>
+                        </div>div>
+                </div>div>
+                <div class="field">
+                        <label for="media">Média mensal recente (R$) — opcional</label>label>
+                        <input type="number" id="media" min="0" step="0.01" placeholder="Ex.: 6500" inputmode="decimal" />
+                        <p class="hint">Se informar, a projeção usa esta média × meses restantes. Senão, usa a média linear do acumulado até o mês atual.</p>p>
+                </div>div>
+          </div>div>
+      
+          <div class="card">
+                <h2>Resultado</h2>
+                <div class="results">
+                        <div>
+                                    <div class="stat">
+                                                  <span class="label">% do limite usado</span>span>
+                                                  <span class="value" id="pct">—</span>span>
+                                    </div>
+                                    <div class="bar-wrap" aria-hidden="true"><div class="bar" id="bar"></div></div>
+                        </div>
+                          <div class="stat">
+                                      <span class="label">Restante até o limite</span>span>
+                                      <span class="value" id="restante">—</span>span>
+                          </div>
+                          <div class="stat">
+                                      <span class="label">Meses restantes no ano</span>span>
+                                      <span class="value" id="mesesRest">—</span>span>
+                          </div>
+                          <div class="stat">
+                                      <span class="label">Projeção linear até dez.</span>span>
+                                      <span class="value" id="projecao">—</span>span>
+                          </div>
+                          <div class="status-msg" id="status" hidden></div>
+                </div>
+          </div>
+
+            <div class="card">
+                    <h2>Quer o guia de obrigações MEI?</h2>
+                    <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Checklist DASN/DAS e calendário simples em PDF — deixe seu e-mail no formulário.</p>p>
+                    <!-- https://docs.google.com/forms/d/e/1FAIpQLSe3uIM0Eo4iqWRlqCdXsjrxDzQm2V6-HjINbQhMQKk2lK_B6Q/viewform: CTA ligado ao Google Form EXP-011 -->
+                    <a class="cta" id="ctaForm" href="https://docs.google.com/forms/d/e/1FAIpQLSe3uIM0Eo4iqWRlqCdXsjrxDzQm2V6-HjINbQhMQKk2lK_B6Q/viewform" target="_blank" rel="noopener">
+                              Quero o guia de obrigações MEI (PDF)
+                    </a>a>
+                    <p class="cta-note">Link placeholder — configure o Google Form antes de publicar.</p>p>
+            </div>
+
+            <footer>
+                    GABF · OPP-011 · EXP-011-2026-09-28 · VERSION 0.1.0<br />
+                    Fontes:
+                    <a href="https://www.gov.br/memp/pt-br/teto-do-mei" target="_blank" rel="noopener">Teto do MEI (gov.br)</a>a>
+                    ·
+                    <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/servicos-para-mei/declaracao-anual-de-faturamento" target="_blank" rel="noopener">DASN-SIMEI</a>a>
+            </footer>
+      </div>
+
+      <script>
+            (function () {
+                    var MESES = [
+                              "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+                              "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+                            ];
+                    var mesSelect = document.getElementById("mes");
+                    var agora = new Date();
+                    var mesPadrao = agora.getMonth(); // 0-11
+                    MESES.forEach(function (nome, i) {
+                              var opt = document.createElement("option");
+                              opt.value = String(i + 1);
+                              opt.textContent = nome;
+                              if (i === mesPadrao) opt.selected = true;
+                              mesSelect.appendChild(opt);
+                    });
+
+                    function fmtBRL(n) {
+                              if (!isFinite(n)) return "—";
+                              return n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+                    }
+                    function fmtPct(n) {
+                              if (!isFinite(n)) return "—";
+                              return n.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + "%";
+                    }
+
+                    function calc() {
+                              var fat = parseFloat(document.getElementById("faturamento").value);
+                              var limite = parseFloat(document.getElementById("limite").value);
+                              var mes = parseInt(mesSelect.value, 10); // 1-12
+                              var mediaOpt = parseFloat(document.getElementById("media").value);
+
+                              var pctEl = document.getElementById("pct");
+                              var restEl = document.getElementById("restante");
+                              var mesesEl = document.getElementById("mesesRest");
+                              var projEl = document.getElementById("projecao");
+                              var bar = document.getElementById("bar");
+                              var status = document.getElementById("status");
+
+                              if (!isFinite(limite) || limite <= 0) {
+                                          pctEl.textContent = restEl.textContent = mesesEl.textContent = projEl.textContent = "—";
+                                          bar.style.width = "0%";
+                                          status.hidden = true;
+                                          return;
+                              }
+
+                              var mesesRestantes = 12 - mes;
+                              mesesEl.textContent = String(mesesRestantes);
+
+                              if (!isFinite(fat) || fat < 0) {
+                                          pctEl.textContent = restEl.textContent = projEl.textContent = "—";
+                                          bar.style.width = "0%";
+                                          status.hidden = true;
+                                          return;
+                              }
+
+                              var pct = (fat / limite) * 100;
+                              var restante = Math.max(0, limite - fat);
+                              pctEl.textContent = fmtPct(pct);
+                              restEl.textContent = fat > limite ? fmtBRL(fat - limite) + " acima" : fmtBRL(restante);
+
+                              var w = Math.min(100, Math.max(0, pct));
+                              bar.style.width = w + "%";
+                              bar.className = "bar" + (pct >= 100 ? " danger" : pct >= 80 ? " warn" : "");
+
+                              // Projeção linear
+                              var mediaMensal;
+                              if (isFinite(mediaOpt) && mediaOpt >= 0) {
+                                          mediaMensal = mediaOpt;
+                              } else if (mes > 0) {
+                                          mediaMensal = fat / mes;
+                              } else {
+                                          mediaMensal = 0;
+                              }
+                              var projetado = fat + mediaMensal * mesesRestantes;
+                              projEl.textContent = fmtBRL(projetado);
+
+                              status.hidden = false;
+                              status.className = "status-msg";
+                              if (pct >= 100) {
+                                          status.classList.add("danger");
+                                          status.textContent = "Acumulado já ≥ limite informado. Consulte um contador e o Portal do Empreendedor sobre desenquadramento. Isto não é orientação oficial.";
+                              } else if (projetado > limite) {
+                                          status.classList.add("warn");
+                                          status.textContent = "Na projeção linear, o faturamento ultrapassaria o limite até dezembro. Ajuste ritmo ou confira regras oficiais — estimativa apenas.";
+                              } else if (pct >= 80) {
+                                          status.classList.add("warn");
+                                          status.textContent = "Você está próximo do limite (≥80%). Monitore o faturamento e confirme obrigações no gov.br.";
+                              } else {
+                                          status.classList.add("ok");
+                                          status.textContent = "Dentro do limite informado na projeção linear. Continue acompanhando; regras e limites podem mudar.";
+                              }
+                    }
+
+                    ["faturamento", "limite", "media", "mes"].forEach(function (id) {
+                              document.getElementById(id).addEventListener("input", calc);
+                              document.getElementById(id).addEventListener("change", calc);
+                    });
+                    calc();
+            })();
+      </script>
+  </body>
+</html>html>
+
+      </script>
+            </footer>
+                        </div></strong></strong></h1>
+            </header>
+  </body>
+    </style></title>
+  </head>
