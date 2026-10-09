@@ -3,8 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Calculadora estimativa do limite de faturamento MEI — ferramenta gratuita, sem assessoria." />
-  <title>Calculadora Limite MEI — GABF</title>
+  <title>Limite MEI 2026: calculadora grátis (R$ 81 mil) e o que muda em 2027</title>
+  <meta name="description" content="Calcule quanto do limite MEI de R$ 81 mil você já usou em 2026, quanto falta e a projeção até dezembro. Entenda o PLP 186 (R$ 110 mil em 2027), ainda não aprovado. Grátis." />
+  <link rel="canonical" href="https://meunomenaoejonny.github.io/gabf-mvp/mei-limite/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="GABF — ferramentas para MEI e prestadores" />
+  <meta property="og:title" content="Limite MEI 2026: calculadora grátis (R$ 81 mil) e o que muda em 2027" />
+  <meta property="og:description" content="Calcule quanto do limite MEI de R$ 81 mil você já usou em 2026, quanto falta e a projeção até dezembro. Entenda o PLP 186 (R$ 110 mil em 2027), ainda não aprovado. Grátis." />
+  <meta property="og:url" content="https://meunomenaoejonny.github.io/gabf-mvp/mei-limite/" />
+  <meta property="og:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-mei-limite.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Limite MEI 2026: calculadora grátis (R$ 81 mil) e o que muda em 2027" />
+  <meta name="twitter:description" content="Calcule quanto do limite MEI de R$ 81 mil você já usou em 2026, quanto falta e a projeção até dezembro. Entenda o PLP 186 (R$ 110 mil em 2027), ainda não aprovado. Grátis." />
+  <meta name="twitter:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-mei-limite.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de limite MEI",
+  "url": "https://meunomenaoejonny.github.io/gabf-mvp/mei-limite/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL"
+  },
+  "description": "Estimativa do percentual do limite anual do MEI já utilizado e projeção linear até dezembro. Não é assessoria."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qual é o limite do MEI em 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O limite vigente é de R$ 81 mil de receita bruta por ano (R$ 6.750 por mês de atividade para quem abriu no meio do ano), segundo a página Teto do MEI (gov.br/memp), consultada em 09/10/2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O limite MEI de R$ 110 mil para 2027 já foi aprovado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não, até 09/10/2026. O PLP 186/2026 propõe R$ 110 mil em 2027 e R$ 140 mil em 2028, mas consta como “Aguardando Despacho do Presidente da Câmara” na ficha de tramitação da Câmara. Veja o guia sobre o limite MEI 2027."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que acontece se eu passar do limite do MEI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pelas regras atuais descritas no gov.br: excesso de até 20% (até R$ 97.200) gera DAS complementar sobre o excedente e desenquadramento a partir do ano seguinte; acima de 20%, o desenquadramento é retroativo ao início do ano (ou da abertura). Confirme seu caso com um contador. Fonte: gov.br/memp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como a calculadora faz a projeção?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ela soma o faturamento acumulado com a média mensal (informada por você ou calculada do acumulado) multiplicada pelos meses que faltam até dezembro. É uma projeção linear simples, não uma previsão contábil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A calculadora guarda meus dados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O cálculo acontece no seu navegador e os valores digitados não são enviados a nenhum servidor. A página conta apenas visualizações de forma anônima, sem cookies."
+      }
+    }
+  ]
+}
+  </script>
+  <script src="../assets/count.js" data-page="mei-limite" defer></script>
   <style>
     :root {
       --bg: #0f1419;
@@ -171,13 +253,21 @@
       color: var(--warn);
       vertical-align: middle;
     }
+
+    .faq details { border-top: 1px solid var(--border, var(--line, #ddd)); padding: 0.6rem 0; }
+    .faq summary { cursor: pointer; font-size: 0.92rem; }
+    .faq details p { margin-top: 0.45rem; font-size: 0.9rem; }
+    .faq a, .related a { color: var(--accent); }
+    .related ul { padding-left: 1.1rem; }
+    .related li { margin-bottom: 0.35rem; font-size: 0.92rem; }
+    .upd { font-size: 0.75rem; opacity: 0.75; margin-top: 0.6rem; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <span class="badge">Ferramenta gratuita · v0.1.0</span>
-      <h1>Calculadora de limite MEI</h1>
+      <h1>Calculadora de limite MEI 2026</h1>
       <p class="lead">Veja quanto do limite anual de faturamento você já usou e uma projeção linear até o fim do ano. <strong>Estimativa apenas — não é assessoria.</strong></p>
     </header>
 
@@ -244,11 +334,32 @@
       <h2>Quer o guia de obrigações MEI?</h2>
       <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Checklist DASN/DAS e calendário simples em PDF — deixe seu e-mail no formulário.</p>
       <!-- https://docs.google.com/forms/d/e/1FAIpQLSe3uIM0Eo4iqWRlqCdXsjrxDzQm2V6-HjINbQhMQKk2lK_B6Q/viewform: CTA ligado ao Google Form EXP-011 -->
-      <a class="cta" id="ctaForm" href="https://docs.google.com/forms/d/e/1FAIpQLSe3uIM0Eo4iqWRlqCdXsjrxDzQm2V6-HjINbQhMQKk2lK_B6Q/viewform" target="_blank" rel="noopener">
+      <a class="cta" id="ctaForm" data-count="form-011" href="https://docs.google.com/forms/d/e/1FAIpQLSe3uIM0Eo4iqWRlqCdXsjrxDzQm2V6-HjINbQhMQKk2lK_B6Q/viewform" target="_blank" rel="noopener">
         Quero o guia de obrigações MEI (PDF)
       </a>
-      <p class="cta-note">Link placeholder — configure o Google Form antes de publicar.</p>
+      <p class="cta-note">Abre um Google Form. Só usamos seu e-mail para enviar o guia quando estiver pronto.</p>
     </div>
+
+    <section class="card faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Perguntas frequentes</h2>
+      <details><summary><strong>Qual é o limite do MEI em 2026?</strong></summary><p>O limite vigente é de R$ 81 mil de receita bruta por ano (R$ 6.750 por mês de atividade para quem abriu no meio do ano), segundo a página <a href="https://www.gov.br/memp/pt-br/teto-do-mei" target="_blank" rel="noopener">Teto do MEI (gov.br/memp)</a>, consultada em 09/10/2026.</p></details>
+      <details><summary><strong>O limite MEI de R$ 110 mil para 2027 já foi aprovado?</strong></summary><p>Não, até 09/10/2026. O PLP 186/2026 propõe R$ 110 mil em 2027 e R$ 140 mil em 2028, mas consta como “Aguardando Despacho do Presidente da Câmara” na <a href="https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2635476" target="_blank" rel="noopener">ficha de tramitação da Câmara</a>. Veja o <a href="limite-mei-2027-foi-aprovado/">guia sobre o limite MEI 2027</a>.</p></details>
+      <details><summary><strong>O que acontece se eu passar do limite do MEI?</strong></summary><p>Pelas regras atuais descritas no gov.br: excesso de até 20% (até R$ 97.200) gera DAS complementar sobre o excedente e desenquadramento a partir do ano seguinte; acima de 20%, o desenquadramento é retroativo ao início do ano (ou da abertura). Confirme seu caso com um contador. Fonte: <a href="https://www.gov.br/memp/pt-br/teto-do-mei" target="_blank" rel="noopener">gov.br/memp</a>.</p></details>
+      <details><summary><strong>Como a calculadora faz a projeção?</strong></summary><p>Ela soma o faturamento acumulado com a média mensal (informada por você ou calculada do acumulado) multiplicada pelos meses que faltam até dezembro. É uma projeção linear simples, não uma previsão contábil.</p></details>
+      <details><summary><strong>A calculadora guarda meus dados?</strong></summary><p>Não. O cálculo acontece no seu navegador e os valores digitados não são enviados a nenhum servidor. A página conta apenas visualizações de forma anônima, sem cookies.</p></details>
+      <p class="upd">Atualizado em 09/10/2026. Não é assessoria contábil, jurídica ou fiscal.</p>
+    </section>
+
+    <nav class="card related" aria-label="Ferramentas e guias relacionados">
+      <h2>Outras ferramentas e guias gratuitos</h2>
+      <ul>
+        <li><a href="../nfse-campinas/">Kit NFS-e Nacional em Campinas (checklist e prazos)</a></li>
+        <li><a href="../nfse-campinas/prazos-nfse-campinas-2026/">Prazos da NFS-e Nacional em Campinas 2026</a></li>
+        <li><a href="../nfse-campinas/emissor-nacional-passo-a-passo/">Emissor Nacional NFS-e: passo a passo para MEI e Simples</a></li>
+        <li><a href="limite-mei-2027-foi-aprovado/">Limite MEI 2027 foi aprovado? Situação do PLP 186</a></li>
+        <li><a href="../orcamento-fakedoor/">Orçamento em PDF para MEI e autônomo</a></li>
+      </ul>
+    </nav>
 
     <footer>
       GABF · OPP-011 · EXP-011-2026-09-28 · VERSION 0.1.0<br />
