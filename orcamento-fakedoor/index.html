@@ -3,8 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Em breve: gere orçamento PDF profissional em minutos. Entre na lista de espera." />
-  <title>Gerador de Orçamento PDF — Em breve | GABF</title>
+  <title>Modelo de orçamento em PDF para MEI e autônomo: o que incluir + gerador (em breve)</title>
+  <meta name="description" content="O que todo orçamento de prestação de serviço precisa ter (itens, total, validade, pagamento) e lista de espera de um gerador de orçamento em PDF pelo celular para MEI e autônomos." />
+  <link rel="canonical" href="https://meunomenaoejonny.github.io/gabf-mvp/orcamento-fakedoor/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="GABF — ferramentas para MEI e prestadores" />
+  <meta property="og:title" content="Modelo de orçamento em PDF para MEI e autônomo: o que incluir + gerador (em breve)" />
+  <meta property="og:description" content="O que todo orçamento de prestação de serviço precisa ter (itens, total, validade, pagamento) e lista de espera de um gerador de orçamento em PDF pelo celular para MEI e autônomos." />
+  <meta property="og:url" content="https://meunomenaoejonny.github.io/gabf-mvp/orcamento-fakedoor/" />
+  <meta property="og:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-orcamento.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Modelo de orçamento em PDF para MEI e autônomo: o que incluir + gerador (em breve)" />
+  <meta name="twitter:description" content="O que todo orçamento de prestação de serviço precisa ter (itens, total, validade, pagamento) e lista de espera de um gerador de orçamento em PDF pelo celular para MEI e autônomos." />
+  <meta name="twitter:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-orcamento.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que um orçamento de prestação de serviço deve ter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No mínimo: seus dados (nome/razão social, CNPJ ou CPF, contato), dados do cliente, descrição clara de cada serviço ou item, quantidade, valor unitário e total, prazo de execução, forma e condições de pagamento, validade da proposta e data. Para casos específicos (contratos, garantias), consulte um profissional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Esta página já gera o orçamento em PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ainda não. O gerador está em validação; esta página é uma lista de espera. Enquanto isso, a lista acima serve de checklist para montar o seu orçamento em qualquer editor e salvar como PDF."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto vai custar o gerador?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ainda não há preço definido. Estamos perguntando no formulário se um pagamento único (one-shot) de R$ 29 faria sentido. Nada é cobrado nesta fase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Orçamento substitui nota fiscal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Orçamento é uma proposta comercial; a nota fiscal (por exemplo, NFS-e para serviços) é o documento fiscal emitido quando o serviço é prestado/faturado. Veja o passo a passo do Emissor Nacional."
+      }
+    }
+  ]
+}
+  </script>
+  <script src="../assets/count.js" data-page="orcamento" defer></script>
   <style>
     :root {
       --bg: #faf8f5;
@@ -222,12 +278,20 @@
       margin-top: 1.25rem;
       text-align: center;
     }
+
+    .faq details { border-top: 1px solid var(--border, var(--line, #ddd)); padding: 0.6rem 0; }
+    .faq summary { cursor: pointer; font-size: 0.92rem; }
+    .faq details p { margin-top: 0.45rem; font-size: 0.9rem; }
+    .faq a, .related a { color: var(--accent); }
+    .related ul { padding-left: 1.1rem; }
+    .related li { margin-bottom: 0.35rem; font-size: 0.92rem; }
+    .upd { font-size: 0.75rem; opacity: 0.75; margin-top: 0.6rem; }
   </style>
 </head>
 <body>
   <main class="hero">
     <span class="pill">Lista de espera · Em breve</span>
-    <h1>Gere orçamento em PDF em minutos</h1>
+    <h1>Orçamento em PDF para MEI e autônomo</h1>
     <p class="sub">Chega de Word bagunçado e WhatsApp sem valor total. Em breve: um gerador simples para autônomos e MEIs — logo, dados do cliente, itens e PDF pronto.</p>
 
     <div class="problem">
@@ -241,14 +305,46 @@
       <li><span class="ico" aria-hidden="true">4</span><span><strong>Sem mensalidade (plano one-shot)</strong> — pagou, usou. Detalhes na lista de espera.</span></li>
     </ul>
 
+    <section class="problem" aria-labelledby="chk-h">
+      <h2 id="chk-h" style="font-size:1.05rem;margin-bottom:0.5rem">Checklist: o que colocar no seu orçamento</h2>
+      <ol style="padding-left:1.2rem;font-size:0.95rem">
+        <li>Seus dados: nome ou razão social, CNPJ/CPF, telefone/WhatsApp e e-mail.</li>
+        <li>Dados do cliente: nome, contato e endereço do serviço (se houver).</li>
+        <li>Descrição de cada serviço/material, quantidade, valor unitário e subtotal.</li>
+        <li>Total geral, descontos e o que <em>não</em> está incluso.</li>
+        <li>Prazo de execução e data de início prevista.</li>
+        <li>Forma de pagamento (PIX, cartão, parcelas, sinal).</li>
+        <li>Validade da proposta (ex.: 7 ou 15 dias) e data de emissão.</li>
+      </ol>
+      <p style="font-size:0.8rem;margin-top:0.5rem;color:var(--muted)">Checklist geral e informativo — não é assessoria jurídica ou contábil.</p>
+    </section>
+
     <div class="form-card" id="waitlist">
       <h2>Entre na lista de espera</h2>
       <p class="hint">Avise-me quando lançar. Também queremos saber se faria sentido um preço one-shot de R$&nbsp;29.</p>
-      <p style="margin-top:1rem"><a href="https://docs.google.com/forms/d/e/1FAIpQLSed37MIb1bjk8pfaWKv5vdaVoL6jQsiCLxeNRUR186t09Biew/viewform" target="_blank" rel="noopener" style="display:inline-block;padding:0.85rem 1.25rem;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;">Quero ser avisado(a) — abrir formulário</a></p>
+      <p style="margin-top:1rem"><a data-count="form-012" href="https://docs.google.com/forms/d/e/1FAIpQLSed37MIb1bjk8pfaWKv5vdaVoL6jQsiCLxeNRUR186t09Biew/viewform" target="_blank" rel="noopener" style="display:inline-block;padding:0.85rem 1.25rem;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;">Quero ser avisado(a) — abrir formulário</a></p>
       <p class="dev-note" style="margin-top:1rem;">Respostas no Google Forms (EXP-012). Esta página não inventa leads.</p>
     </div>
 
     <p class="fake-note">Produto em validação — ainda não há gerador ativo nesta página. Sem depoimentos inventados.</p>
+    <section class="problem faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Perguntas frequentes</h2>
+      <details><summary><strong>O que um orçamento de prestação de serviço deve ter?</strong></summary><p>No mínimo: seus dados (nome/razão social, CNPJ ou CPF, contato), dados do cliente, descrição clara de cada serviço ou item, quantidade, valor unitário e total, prazo de execução, forma e condições de pagamento, validade da proposta e data. Para casos específicos (contratos, garantias), consulte um profissional.</p></details>
+      <details><summary><strong>Esta página já gera o orçamento em PDF?</strong></summary><p>Ainda não. O gerador está em validação; esta página é uma lista de espera. Enquanto isso, a lista acima serve de checklist para montar o seu orçamento em qualquer editor e salvar como PDF.</p></details>
+      <details><summary><strong>Quanto vai custar o gerador?</strong></summary><p>Ainda não há preço definido. Estamos perguntando no formulário se um pagamento único (one-shot) de R$ 29 faria sentido. Nada é cobrado nesta fase.</p></details>
+      <details><summary><strong>Orçamento substitui nota fiscal?</strong></summary><p>Não. Orçamento é uma proposta comercial; a nota fiscal (por exemplo, NFS-e para serviços) é o documento fiscal emitido quando o serviço é prestado/faturado. Veja o <a href="../nfse-campinas/emissor-nacional-passo-a-passo/">passo a passo do Emissor Nacional</a>.</p></details>
+      <p class="upd">Atualizado em 09/10/2026. Não é assessoria contábil, jurídica ou fiscal.</p>
+    </section>
+
+    <nav class="problem related" aria-label="Ferramentas e guias relacionados">
+      <h2>Outras ferramentas e guias gratuitos</h2>
+      <ul>
+        <li><a href="../mei-limite/">Calculadora de limite MEI 2026</a></li>
+        <li><a href="../mei-limite/limite-mei-2027-foi-aprovado/">Limite MEI 2027 foi aprovado?</a></li>
+        <li><a href="../nfse-campinas/">Kit NFS-e Nacional em Campinas</a></li>
+        <li><a href="../nfse-campinas/emissor-nacional-passo-a-passo/">Emissor Nacional NFS-e: passo a passo</a></li>
+      </ul>
+    </nav>
   </main>
 
   <footer>

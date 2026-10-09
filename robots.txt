@@ -1,0 +1,6 @@
+# Observação: em um site de projeto do GitHub Pages, buscadores só leem /robots.txt na raiz do host
+# (meunomenaoejonny.github.io/robots.txt), que não é controlado por este repositório.
+# Este arquivo é informativo; o sitemap é enviado via Search Console / IndexNow.
+User-agent: *
+Allow: /
+Sitemap: https://meunomenaoejonny.github.io/gabf-mvp/sitemap.xml

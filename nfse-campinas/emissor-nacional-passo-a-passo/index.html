@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emissor Nacional NFS-e passo a passo para MEI e Simples Nacional (2026)</title>
+  <meta name="description" content="Como acessar e emitir no Emissor Nacional da NFS-e: gov.br para MEI, certificado ou usuário e senha para ME/EPP do Simples, primeiro acesso, configurações e emissão. Baseado no material oficial." />
+  <link rel="canonical" href="https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/emissor-nacional-passo-a-passo/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="GABF — ferramentas para MEI e prestadores" />
+  <meta property="og:title" content="Emissor Nacional NFS-e passo a passo para MEI e Simples Nacional (2026)" />
+  <meta property="og:description" content="Como acessar e emitir no Emissor Nacional da NFS-e: gov.br para MEI, certificado ou usuário e senha para ME/EPP do Simples, primeiro acesso, configurações e emissão. Baseado no material oficial." />
+  <meta property="og:url" content="https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/emissor-nacional-passo-a-passo/" />
+  <meta property="og:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Emissor Nacional NFS-e passo a passo para MEI e Simples Nacional (2026)" />
+  <meta name="twitter:description" content="Como acessar e emitir no Emissor Nacional da NFS-e: gov.br para MEI, certificado ou usuário e senha para ME/EPP do Simples, primeiro acesso, configurações e emissão. Baseado no material oficial." />
+  <meta name="twitter:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Emissor Nacional da NFS-e: passo a passo para MEI e Simples",
+  "inLanguage": "pt-BR",
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "mainEntityOfPage": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/emissor-nacional-passo-a-passo/",
+  "author": {
+    "@type": "Organization",
+    "name": "GABF"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GABF"
+  },
+  "image": "https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "MEI pode entrar no Emissor Nacional com a conta gov.br?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Segundo a documentação oficial, MEI pode acessar com a conta gov.br de nível prata ou ouro do CPF do titular, e o sistema vincula ao CNPJ automaticamente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ME ou EPP do Simples pode usar gov.br no Emissor Nacional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Segundo as Perguntas e Respostas oficiais (v1.1, 22/09/2026), no estágio atual o acesso via gov.br é exclusivo para MEI; ME/EPP devem usar certificado digital ou usuário e senha."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso de certificado digital para emitir como MEI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não é obrigatório para o MEI no emissor web; segundo a NT 2023.001, o e-CNPJ só é exigido para envio da DPS via API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é a Emissão Simplificada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É uma forma de emissão disponível apenas para MEI no Emissor Web, segundo o guia oficial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O Emissor Nacional é pago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O emissor web do Portal Nacional da NFS-e é de acesso gratuito."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "GABF",
+      "item": "https://meunomenaoejonny.github.io/gabf-mvp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "NFS-e Campinas",
+      "item": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Emissor Nacional passo a passo",
+      "item": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/emissor-nacional-passo-a-passo/"
+    }
+  ]
+}
+  </script>
+  <script src="../../assets/count.js" data-page="nfse-passo" defer></script>
+  <style>
+    :root{--bg:#f4f7fb;--surface:#fff;--text:#1a2332;--muted:#5a6b80;--border:#d0dae6;--accent:#1a7fd4;--warn:#b7791f;--radius:12px}
+    @media (prefers-color-scheme:dark){:root{--bg:#0f1419;--surface:#1a2332;--text:#e8eef6;--muted:#8b9cb3;--border:#2d3a4f;--accent:#3d9cf0;--warn:#f0b429}}
+    *{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:1.25rem}
+    .wrap{max-width:720px;margin:0 auto}a{color:var(--accent)}h1{font-size:1.6rem;line-height:1.25;margin:.3rem 0 .6rem}h2{font-size:1.15rem;margin:1.4rem 0 .5rem}
+    .meta{font-size:.8rem;color:var(--muted)}.crumbs{font-size:.8rem}.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.15rem;margin:1rem 0}
+    .disclaimer{font-size:.85rem;border-left:3px solid var(--warn);padding:.7rem .9rem;background:var(--surface);border-radius:0 8px 8px 0;margin:1rem 0}
+    table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--border);padding:.5rem .4rem}
+    .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:.8rem 1.1rem;border-radius:8px;margin:.3rem .4rem .3rem 0}
+    ol li,ul li{margin-bottom:.35rem}.sources{font-size:.82rem;word-break:break-word}footer{margin-top:2rem;font-size:.75rem;color:var(--muted);text-align:center}
+
+    .faq details { border-top: 1px solid var(--border, var(--line, #ddd)); padding: 0.6rem 0; }
+    .faq summary { cursor: pointer; font-size: 0.92rem; }
+    .faq details p { margin-top: 0.45rem; font-size: 0.9rem; }
+    .faq a, .related a { color: var(--accent); }
+    .related ul { padding-left: 1.1rem; }
+    .related li { margin-bottom: 0.35rem; font-size: 0.92rem; }
+    .upd { font-size: 0.75rem; opacity: 0.75; margin-top: 0.6rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">GABF</a> › <a href="../../nfse-campinas/">NFS-e Campinas</a> › Emissor Nacional passo a passo</p>
+    <article>
+    <h1>Emissor Nacional da NFS-e: passo a passo para MEI e Simples</h1>
+    <p class="meta">Publicado e atualizado em 09/10/2026 · Conteúdo informativo, <strong>não é assessoria</strong> contábil, jurídica ou fiscal.</p>
+    <div class="disclaimer">Roteiro baseado na documentação oficial do Portal Nacional da NFS-e (guia do Emissor Web, Nota Técnica 2023.001 e Perguntas e Respostas v1.1 de 22/09/2026). As telas podem mudar; em caso de dúvida, siga o material oficial e fale com seu contador.</div>
+    <h2>1. Antes de começar</h2>
+    <ul>
+      <li>Endereço oficial: <a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">www.nfse.gov.br/EmissorNacional</a> (gratuito).</li>
+      <li><strong>MEI:</strong> o caminho mais simples é a conta <strong>gov.br prata ou ouro</strong> do CPF do titular; o sistema vincula ao CNPJ do MEI automaticamente.</li>
+      <li><strong>ME/EPP do Simples:</strong> segundo as Perguntas e Respostas oficiais, o acesso via gov.br está disponível <strong>apenas para MEI</strong>; use <strong>certificado digital (e-CNPJ)</strong> ou <strong>usuário e senha</strong> criados em “Fazer primeiro acesso”.</li>
+      <li>Para usar o aplicativo, é preciso fazer o cadastro primeiro no Emissor Web.</li>
+    </ul>
+    <h2>2. Primeiro acesso (usuário e senha)</h2>
+    <ol>
+      <li>No Emissor Nacional, clique em <strong>“Fazer primeiro acesso”</strong>.</li>
+      <li>Informe o CNPJ, o CPF do responsável e a data de nascimento; o sistema pode pedir dados como título de eleitor ou recibos do IRPF.</li>
+      <li>Cadastre e-mail e senha e valide o código numérico enviado ao e-mail.</li>
+    </ol>
+    <h2>3. Configurações iniciais</h2>
+    <ol>
+      <li>Entre e abra <strong>Configurações</strong>: informe e-mail e telefone que aparecerão na NFS-e.</li>
+      <li>Revise a opção de valor aproximado dos tributos conforme a orientação do seu contador.</li>
+      <li>MEI que pretende usar o app: cadastre <strong>Serviços Favoritos</strong>.</li>
+    </ol>
+    <h2>4. Emitir a nota</h2>
+    <ol>
+      <li>Clique no ícone de <strong>+</strong> e escolha <strong>Emissão Completa</strong> ou <strong>Emissão Simplificada</strong> (esta última apenas para MEI).</li>
+      <li>Preencha tomador, serviço (código de tributação), valores e confira os dados antes de emitir.</li>
+      <li>Depois de emitida, baixe o XML e o DANFSe para enviar ao cliente e guardar.</li>
+    </ol>
+    <h2>5. Se der erro de acesso</h2>
+    <ul>
+      <li>MEI tentando usuário/senha ou ME/EPP tentando gov.br costumam ter acesso negado: use a forma correta para o seu porte.</li>
+      <li>O documento oficial também cita a autorização municipal no Cadastro Nacional Complementar (CNC) e o convênio do município como causas de falha; nesses casos, procure a Prefeitura.</li>
+    </ul>
+    <div class="card"><strong>Em Campinas?</strong> Veja as datas de cada grupo em <a href="../prazos-nfse-campinas-2026/">prazos NFS-e Campinas 2026</a>.<br />
+      <a class="cta" href="../">Ver o kit NFS-e Campinas</a><a class="cta" data-count="form-013-passo" href="https://docs.google.com/forms/d/e/1FAIpQLSetAvZJsOs86qdV1pUT5QLOtzPQ0bef2vhWU4--j0qV0chFrQ/viewform" target="_blank" rel="noopener">Entrar na lista (Google Form)</a></div>
+    <section class="card faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Perguntas frequentes</h2>
+      <details><summary><strong>MEI pode entrar no Emissor Nacional com a conta gov.br?</strong></summary><p>Sim. Segundo a documentação oficial, MEI pode acessar com a conta gov.br de nível prata ou ouro do CPF do titular, e o sistema vincula ao CNPJ automaticamente.</p></details>
+      <details><summary><strong>ME ou EPP do Simples pode usar gov.br no Emissor Nacional?</strong></summary><p>Segundo as Perguntas e Respostas oficiais (v1.1, 22/09/2026), no estágio atual o acesso via gov.br é exclusivo para MEI; ME/EPP devem usar certificado digital ou usuário e senha.</p></details>
+      <details><summary><strong>Preciso de certificado digital para emitir como MEI?</strong></summary><p>Não é obrigatório para o MEI no emissor web; segundo a NT 2023.001, o e-CNPJ só é exigido para envio da DPS via API.</p></details>
+      <details><summary><strong>O que é a Emissão Simplificada?</strong></summary><p>É uma forma de emissão disponível apenas para MEI no Emissor Web, segundo o guia oficial.</p></details>
+      <details><summary><strong>O Emissor Nacional é pago?</strong></summary><p>Não. O emissor web do Portal Nacional da NFS-e é de acesso gratuito.</p></details>
+      <p class="upd">Atualizado em 09/10/2026. Não é assessoria contábil, jurídica ou fiscal.</p>
+    </section>
+    <section class="card sources"><h2>Fontes consultadas em 09/10/2026</h2><ul>
+        <li><a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">Emissor Nacional da NFS-e</a></li>
+        <li><a href="https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/guia-emissorpubliconacionalweb_snnfse-ern-v12.pdf" target="_blank" rel="noopener">Guia do Emissor Público Nacional Web (v1.2)</a></li>
+        <li><a href="https://www.gov.br/nfse/pt-br/perguntas-frequentes/perguntas-e-respostas-nfs-e-v-1-1-20260922.pdf" target="_blank" rel="noopener">Perguntas e Respostas NFS-e v1.1 (22/09/2026)</a></li>
+        <li><a href="https://www.gov.br/nfse/pt-br/nt-2023-001-obrigatoriedade-da-nfs-e-nacional-para-o-mei.pdf" target="_blank" rel="noopener">Nota Técnica 2023.001 — obrigatoriedade para o MEI</a></li>
+        <li><a href="https://www.gov.br/nfse/pt-br/mei/links-com-passo-a-passo" target="_blank" rel="noopener">Portal NFS-e — links com passo a passo para MEI</a></li>
+        <li><a href="https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/agosto/simples-nacional-nfs-e-nacional-sera-obrigatoria-para-me-e-epp-a-partir-de-1o-de-novembro-de-2026" target="_blank" rel="noopener">Receita Federal — NFS-e Nacional para ME/EPP a partir de 1º/11/2026</a></li>
+    </ul></section>
+    </article>
+    <nav class="card related" aria-label="Ferramentas e guias relacionados">
+      <h2>Outras ferramentas e guias gratuitos</h2>
+      <ul>
+        <li><a href="../prazos-nfse-campinas-2026/">Prazos da NFS-e Nacional em Campinas 2026</a></li>
+        <li><a href="../">Kit NFS-e Nacional em Campinas (lista de espera)</a></li>
+        <li><a href="../../mei-limite/">Calculadora de limite MEI 2026</a></li>
+        <li><a href="../../orcamento-fakedoor/">Orçamento em PDF para MEI e autônomo</a></li>
+      </ul>
+    </nav>
+    <footer>GABF · conteúdo informativo, sem garantia de conformidade · <a href="../../">todas as ferramentas</a></footer>
+  </div>
+</body>
+</html>
