@@ -27,7 +27,7 @@
   "name": "Kit transição NFS-e Nacional — Campinas",
   "url": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-10-09"
+  "dateModified": "2026-10-14"
 }
   </script>
   <script type="application/ld+json">
@@ -247,6 +247,18 @@
     .related ul { padding-left: 1.1rem; }
     .related li { margin-bottom: 0.35rem; font-size: 0.92rem; }
     .upd { font-size: 0.75rem; opacity: 0.75; margin-top: 0.6rem; }
+
+    .checklist-section h3 { font-weight: 600; }
+    .checklist { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .checklist li { padding: 0.4rem 0; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist label { display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer; }
+    .checklist input[type="checkbox"] { margin-top: 0.2rem; accent-color: var(--ok); width: 1.1rem; height: 1.1rem; }
+    .checklist a { color: var(--accent); }
+    .checklist-steps { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .checklist-steps li { padding: 0.35rem 0; font-size: 0.9rem; }
+    .cta-secondary { background: var(--surface2); color: var(--accent); border: 1px solid var(--accent); }
+    .cta-secondary:hover { background: var(--accent); color: #fff; }
   </style>
 </head>
 <body>
@@ -254,8 +266,64 @@
     <header>
       <span class="badge">Lista de espera · v0.1.0 · Campinas/SP</span>
       <h1>NFS-e Nacional em Campinas: kit de transição</h1>
-      <p class="lead">Checklist por etapa (out → jan) + links oficiais + lembretes de Calendar para prestadores Simples/MEI em Campinas. <strong>Não é assessoria.</strong></p>
+      <p class="lead">Checklist gratuito por etapa (out → jan) + links oficiais + passo a passo do Emissor Nacional para prestadores Simples/MEI em Campinas. <strong>Não é assessoria.</strong></p>
     </header>
+
+    <section class="card checklist-section" aria-labelledby="checklist-h">
+      <h2 id="checklist-h">Checklist gratuito: migração NFS-e Nacional em Campinas</h2>
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Use este checklist para se preparar. Marque cada item conforme avança — os dados ficam no seu navegador.</p>
+      
+      <h3 style="font-size:0.9rem;margin:1rem 0 0.5rem;color:var(--accent);">Etapa 1: Preparar acesso (outubro/2026)</h3>
+      <ul class="checklist">
+        <li><label><input type="checkbox" class="ck" /> Confirmar se sou MEI, ME ou EPP optante do Simples Nacional</label></li>
+        <li><label><input type="checkbox" class="ck" /> Identificar minha data no cronograma (1º/10, 1º/11 ou 1º/12/2026)</label></li>
+        <li><label><input type="checkbox" class="ck" /> Criar ou atualizar conta gov.br (nível prata ou ouro)</label></li>
+        <li><label><input type="checkbox" class="ck" /> Testar login no <a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">Emissor Nacional</a></label></li>
+        <li><label><input type="checkbox" class="ck" /> Guardar print/PDF das telas de acesso</label></li>
+        <li><label><input type="checkbox" class="ck" /> Perguntar ao contador/software se já integra com o Emissor Nacional</label></li>
+      </ul>
+
+      <h3 style="font-size:0.9rem;margin:1rem 0 0.5rem;color:var(--accent);">Etapa 2: Acessar o Emissor Nacional (passo a passo)</h3>
+      <ol class="checklist-steps">
+        <li><strong>MEI:</strong> Entre em <a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">nfse.gov.br/EmissorNacional</a> com sua conta gov.br (prata ou ouro). O sistema vincula ao CNPJ automaticamente.</li>
+        <li><strong>ME/EPP Simples:</strong> Use certificado digital (e-CNPJ) ou clique em "Fazer primeiro acesso" para criar usuário e senha.</li>
+        <li>Abra <strong>Configurações</strong>: informe e-mail e telefone que aparecerão na NFS-e.</li>
+        <li>MEI: cadastre <strong>Serviços Favoritos</strong> se for usar o app.</li>
+      </ol>
+
+      <h3 style="font-size:0.9rem;margin:1rem 0 0.5rem;color:var(--accent);">Etapa 3: Emitir a nota</h3>
+      <ol class="checklist-steps">
+        <li>Clique no ícone de <strong>+</strong> e escolha <strong>Emissão Completa</strong> ou <strong>Emissão Simplificada</strong> (esta apenas para MEI).</li>
+        <li>Preencha tomador, código de tributação do serviço e valores.</li>
+        <li>Confira os dados e emita.</li>
+        <li>Baixe o XML e o DANFSe para enviar ao cliente e guardar.</li>
+      </ol>
+
+      <h3 style="font-size:0.9rem;margin:1rem 0 0.5rem;color:var(--warn);">Erros comuns (e como resolver)</h3>
+      <ul class="checklist">
+        <li><strong>"Acesso negado" para MEI:</strong> verifique se a conta gov.br é prata ou ouro, não bronze.</li>
+        <li><strong>"Acesso negado" para ME/EPP:</strong> você está tentando entrar com gov.br, mas ME/EPP deve usar certificado digital ou usuário/senha.</li>
+        <li><strong>Erro de autorização municipal:</strong> verifique se o convênio do município está ativo e se há cadastro no CNC (Cadastro Nacional Complementar). Procure a Prefeitura.</li>
+        <li><strong>Emitiu no sistema errado:</strong> a partir da sua data de obrigatoriedade, use apenas o Emissor Nacional. Notas emitidas no sistema municipal antigo podem gerar problemas.</li>
+      </ul>
+
+      <h3 style="font-size:0.9rem;margin:1rem 0 0.5rem;color:var(--accent);">Etapa 4: Novembro/2026 em diante</h3>
+      <ul class="checklist">
+        <li><label><input type="checkbox" class="ck" /> A partir de 1º/11/2026 (Simples ME/EPP): emitir somente pelo Emissor Nacional</label></li>
+        <li><label><input type="checkbox" class="ck" /> Fazer 1 emissão teste e validar DANFSE/XML</label></li>
+        <li><label><input type="checkbox" class="ck" /> Atualizar dados do tomador (cliente PJ/PF)</label></li>
+        <li><label><input type="checkbox" class="ck" /> Conferir com contador particularidades de Campinas</label></li>
+      </ul>
+
+      <h3 style="font-size:0.9rem;margin:1rem 0 0.5rem;color:var(--accent);">Etapa 5: Dezembro/2026 e Janeiro/2027</h3>
+      <ul class="checklist">
+        <li><label><input type="checkbox" class="ck" /> Se atividade de 1º/12 (plataformas, dados, software, conteúdo internet, transporte coletivo): migrar nesta data</label></li>
+        <li><label><input type="checkbox" class="ck" /> Revisar notas de nov–dez: sistema usado × obrigação</label></li>
+        <li><label><input type="checkbox" class="ck" /> A partir de 1º/01/2027: observar regras IBS/CBS no documento fiscal</label></li>
+        <li><label><input type="checkbox" class="ck" /> Emitir 1ª nota de janeiro e revisar campos novos com contador</label></li>
+      </ul>
+      <p class="upd">Última atualização: 14/10/2026</p>
+    </section>
 
     <div class="disclaimer" role="note">
       <strong>Aviso importante:</strong> este material <strong>não é contabilidade, assessoria jurídica nem fiscal</strong>. Prazos e regras mudam. Confirme sempre na
@@ -303,23 +371,23 @@
     </div>
 
     <div class="card">
-      <h2>O que tem no kit</h2>
+      <h2>O que você encontra aqui (grátis)</h2>
       <ul class="kit-list">
-        <li><span class="ico" aria-hidden="true">✓</span><span>Checklist por etapa: <strong>out / nov / dez / jan</strong></span></li>
+        <li><span class="ico" aria-hidden="true">✓</span><span>Checklist completo por etapa: <strong>out / nov / dez / jan</strong></span></li>
+        <li><span class="ico" aria-hidden="true">✓</span><span>Passo a passo do Emissor Nacional</span></li>
+        <li><span class="ico" aria-hidden="true">✓</span><span>Erros comuns e como resolver</span></li>
         <li><span class="ico" aria-hidden="true">✓</span><span>Links oficiais (RFB, Portal NFS-e, Emissor Nacional)</span></li>
-        <li><span class="ico" aria-hidden="true">✓</span><span>Sugestões de lembretes para Google Calendar</span></li>
-        <li><span class="ico" aria-hidden="true">✓</span><span>Linguagem leiga, one-shot — sem mensalidade</span></li>
+        <li><span class="ico" aria-hidden="true">✓</span><span>Linguagem leiga, sem mensalidade</span></li>
       </ul>
-      <p style="font-size:0.8rem;color:var(--muted);margin-top:0.85rem">Preço futuro estimado R$&nbsp;27–67 — <strong>não validado</strong>. Nesta fase: entre na lista e receba o checklist quando liberarmos.</p>
     </div>
 
     <div class="card">
-      <h2>Quero o kit NFS-e Campinas</h2>
-      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Deixe e-mail no formulário. Sem ads pagos neste teste. Sem checkout nesta versão (Nível 0).</p>
-      <a class="cta" id="ctaForm" data-count="form-013" href="https://docs.google.com/forms/d/e/1FAIpQLSetAvZJsOs86qdV1pUT5QLOtzPQ0bef2vhWU4--j0qV0chFrQ/viewform" target="_blank" rel="noopener">
-        Quero o kit NFS-e Campinas (lista de espera)
+      <h2>Receber lembrete do prazo por e-mail (opcional)</h2>
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Quer um lembrete antes das datas-chave? Deixe seu e-mail no formulário. Sem spam.</p>
+      <a class="cta cta-secondary" id="ctaForm" data-count="form-013" href="https://docs.google.com/forms/d/e/1FAIpQLSetAvZJsOs86qdV1pUT5QLOtzPQ0bef2vhWU4--j0qV0chFrQ/viewform" target="_blank" rel="noopener">
+        Quero receber lembrete por e-mail
       </a>
-      <p class="cta-note" id="ctaNote">Formulário ao vivo. Sem spam — só avisamos quando o checklist estiver liberado.</p>
+      <p class="cta-note" id="ctaNote">Formulário Google. Só usamos seu e-mail para enviar o lembrete.</p>
     </div>
 
     <div class="card">
@@ -341,11 +409,18 @@
       <details><summary><strong>MEI de Campinas também precisa usar o Emissor Nacional?</strong></summary><p>Sim. Para o MEI, a emissão pelo sistema nacional já é obrigatória desde 01/09/2023 (<a href="https://www.gov.br/nfse/pt-br/nt-2023-001-obrigatoriedade-da-nfs-e-nacional-para-o-mei.pdf" target="_blank" rel="noopener">NT 2023.001</a>, Resolução CGSN 169/2022).</p></details>
       <details><summary><strong>Como acesso o Emissor Nacional?</strong></summary><p>Pelo endereço <a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">nfse.gov.br/EmissorNacional</a>. MEI pode entrar com a conta gov.br (prata ou ouro); ME/EPP usam certificado digital ou usuário e senha criados em “Fazer primeiro acesso”. Veja o <a href="emissor-nacional-passo-a-passo/">passo a passo</a>.</p></details>
       <details><summary><strong>Este kit é assessoria fiscal?</strong></summary><p>Não. É um material informativo com links oficiais e lembretes. Ele não substitui contador e não garante conformidade.</p></details>
-      <p class="upd">Atualizado em 09/10/2026. Não é assessoria contábil, jurídica ou fiscal.</p>
+      <p class="upd">Atualizado em 14/10/2026. Não é assessoria contábil, jurídica ou fiscal.</p>
     </section>
 
     <nav class="card related" aria-label="Ferramentas e guias relacionados">
-      <h2>Outras ferramentas e guias gratuitos</h2>
+      <h2>Guias específicos para sua situação</h2>
+      <ul>
+        <li><a href="mei-nfse-nacional-campinas/">MEI e NFS-e Nacional em Campinas: o que você precisa saber</a></li>
+        <li><a href="nfse-campinas-simples-nacional/">NFS-e Campinas para Simples Nacional: ME e EPP</a></li>
+        <li><a href="erros-emissor-nacional-nfse/">Erros comuns no Emissor Nacional da NFS-e e como resolver</a></li>
+        <li><a href="checklist-migracao-nfse-campinas/">Checklist de migração NFS-e Campinas (versão para imprimir)</a></li>
+      </ul>
+      <h2 style="margin-top:1rem;">Outras ferramentas e guias gratuitos</h2>
       <ul>
         <li><a href="prazos-nfse-campinas-2026/">Prazos da NFS-e Nacional em Campinas 2026 (tabela)</a></li>
         <li><a href="emissor-nacional-passo-a-passo/">Emissor Nacional NFS-e: passo a passo para MEI e Simples</a></li>
