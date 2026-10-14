@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Erros comuns no Emissor Nacional da NFS-e e como resolver (2026)</title>
+  <meta name="description" content="Guia de erros no Emissor Nacional da NFS-e: acesso negado, conta gov.br bronze, ME/EPP tentando gov.br, erro de autorização municipal e mais. Soluções passo a passo." />
+  <link rel="canonical" href="https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/erros-emissor-nacional-nfse/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="GABF — ferramentas para MEI e prestadores" />
+  <meta property="og:title" content="Erros comuns no Emissor Nacional da NFS-e e como resolver (2026)" />
+  <meta property="og:description" content="Guia de erros no Emissor Nacional da NFS-e: acesso negado, conta gov.br bronze, ME/EPP tentando gov.br, erro de autorização municipal e mais. Soluções passo a passo." />
+  <meta property="og:url" content="https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/erros-emissor-nacional-nfse/" />
+  <meta property="og:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Erros comuns no Emissor Nacional da NFS-e e como resolver (2026)" />
+  <meta name="twitter:description" content="Guia de erros no Emissor Nacional da NFS-e: acesso negado, conta gov.br bronze, ME/EPP tentando gov.br, erro de autorização municipal e mais. Soluções passo a passo." />
+  <meta name="twitter:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Erros comuns no Emissor Nacional da NFS-e e como resolver",
+  "inLanguage": "pt-BR",
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "mainEntityOfPage": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/erros-emissor-nacional-nfse/",
+  "author": { "@type": "Organization", "name": "GABF" },
+  "publisher": { "@type": "Organization", "name": "GABF" },
+  "image": "https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Por que recebo 'acesso negado' no Emissor Nacional como MEI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O erro mais comum é a conta gov.br estar no nível bronze. O MEI precisa de conta gov.br prata ou ouro para acessar o Emissor Nacional. Aumente o nível pelo app gov.br ou pelo site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ME ou EPP pode usar gov.br no Emissor Nacional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não no estágio atual. Segundo as Perguntas e Respostas oficiais (v1.1, 22/09/2026), o acesso via gov.br é exclusivo para MEI. ME e EPP devem usar certificado digital ou usuário e senha criados em 'Fazer primeiro acesso'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é erro de autorização municipal no Emissor Nacional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pode indicar pendência no CNC (Cadastro Nacional Complementar) ou problema com o convênio do município. Procure a Secretaria Municipal de Finanças de Campinas para verificar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Emiti a nota no sistema errado. O que fazer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se você emitiu no sistema municipal antigo quando já deveria usar o Emissor Nacional, consulte seu contador. Pode ser necessário cancelar a nota e reemitir no sistema correto. A partir da sua data de obrigatoriedade, use apenas o Emissor Nacional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O Emissor Nacional está fora do ar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Emissor Nacional raramente fica fora do ar. Se não conseguir acessar, verifique sua conexão, limpe o cache do navegador e tente em modo anônimo. Se o problema persistir, aguarde alguns minutos e tente novamente."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "GABF", "item": "https://meunomenaoejonny.github.io/gabf-mvp/" },
+    { "@type": "ListItem", "position": 2, "name": "NFS-e Campinas", "item": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/" },
+    { "@type": "ListItem", "position": 3, "name": "Erros no Emissor Nacional", "item": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/erros-emissor-nacional-nfse/" }
+  ]
+}
+  </script>
+  <script src="../../assets/count.js" data-page="erros-emissor" defer></script>
+  <style>
+    :root{--bg:#f4f7fb;--surface:#fff;--text:#1a2332;--muted:#5a6b80;--border:#d0dae6;--accent:#1a7fd4;--warn:#b7791f;--ok:#2e7d32;--danger:#c62828;--radius:12px}
+    @media (prefers-color-scheme:dark){:root{--bg:#0f1419;--surface:#1a2332;--text:#e8eef6;--muted:#8b9cb3;--border:#2d3a4f;--accent:#3d9cf0;--warn:#f0b429;--ok:#3ecf8e;--danger:#f07178}}
+    *{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:1.25rem}
+    .wrap{max-width:720px;margin:0 auto}a{color:var(--accent)}h1{font-size:1.6rem;line-height:1.25;margin:.3rem 0 .6rem}h2{font-size:1.15rem;margin:1.4rem 0 .5rem}h3{font-size:1rem;margin:1.2rem 0 .4rem}
+    .meta{font-size:.8rem;color:var(--muted)}.crumbs{font-size:.8rem}.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.15rem;margin:1rem 0}
+    .disclaimer{font-size:.85rem;border-left:3px solid var(--warn);padding:.7rem .9rem;background:var(--surface);border-radius:0 8px 8px 0;margin:1rem 0}
+    .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:.8rem 1.1rem;border-radius:8px;margin:.3rem .4rem .3rem 0}
+    ol li,ul li{margin-bottom:.35rem}p{margin:.6rem 0}.sources{font-size:.82rem;word-break:break-word}footer{margin-top:2rem;font-size:.75rem;color:var(--muted);text-align:center}
+    .faq details{border-top:1px solid var(--border);padding:.6rem 0}.faq summary{cursor:pointer;font-size:.92rem}.faq details p{margin-top:.45rem;font-size:.9rem}
+    .faq a,.related a{color:var(--accent)}.related ul{padding-left:1.1rem}.related li{margin-bottom:.35rem;font-size:.92rem}.upd{font-size:.75rem;opacity:.75;margin-top:.6rem}
+    .error-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.15rem;margin:1rem 0;border-left:4px solid var(--danger)}
+    .error-box h3{color:var(--danger);margin-top:0}
+    .solution{background:color-mix(in srgb, var(--ok) 10%, var(--surface));border-left:3px solid var(--ok);padding:.7rem .9rem;border-radius:0 8px 8px 0;margin:.5rem 0}
+    .solution strong{color:var(--ok)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">GABF</a> › <a href="../">NFS-e Campinas</a> › Erros no Emissor Nacional</p>
+    <article>
+    <h1>Erros comuns no Emissor Nacional da NFS-e e como resolver</h1>
+    <p class="meta">Publicado em 14/10/2026 · Conteúdo informativo, <strong>não é assessoria</strong> contábil, jurídica ou fiscal.</p>
+
+    <div class="disclaimer"><strong>Atenção:</strong> Este guia lista os erros mais relatados por usuários do Emissor Nacional. Se o seu erro não estiver aqui ou a solução não funcionar, procure a Secretaria Municipal de Finanças de Campinas ou um contador.</div>
+
+    <p>Migrar para o Emissor Nacional da NFS-e pode gerar dúvidas, especialmente na transição. Abaixo, listamos os erros mais comuns e como resolvê-los, baseados na documentação oficial e nas Perguntas e Respostas do Portal NFS-e.</p>
+
+    <h2>Erros de acesso</h2>
+
+    <div class="error-box">
+      <h3>1. "Acesso negado" para MEI</h3>
+      <p><strong>Causa mais comum:</strong> A conta gov.br está no nível bronze. O Emissor Nacional exige conta gov.br <strong>prata ou ouro</strong> para MEI.</p>
+      <div class="solution">
+        <strong>Solução:</strong> Aumente o nível da sua conta gov.br. Você pode fazer isso pelo app gov.br ou pelo site, validando dados como biometria facial, bancos conveniados ou certificado digital. O processo leva poucos minutos.
+      </div>
+    </div>
+
+    <div class="error-box">
+      <h3>2. "Acesso negado" para ME ou EPP</h3>
+      <p><strong>Causa:</strong> ME e EPP do Simples Nacional estão tentando acessar com gov.br, mas esse método é exclusivo para MEI.</p>
+      <div class="solution">
+        <strong>Solução:</strong> Use <strong>certificado digital (e-CNPJ)</strong> ou clique em <strong>"Fazer primeiro acesso"</strong> para criar usuário e senha. Segundo as Perguntas e Respostas oficiais (v1.1, 22/09/2026), o acesso via gov.br está disponível apenas para MEI.
+      </div>
+    </div>
+
+    <div class="error-box">
+      <h3>3. Sistema não encontra o CNPJ</h3>
+      <p><strong>Causa:</strong> O CPF informado no login não é o do titular/responsável legal pelo CNPJ.</p>
+      <div class="solution">
+        <strong>Solução:</strong> Confirme que está usando o CPF do titular do MEI ou do responsável legal da ME/EPP. Se outra pessoa administra, ela precisa de procuração eletrônica cadastrada na Receita Federal.
+      </div>
+    </div>
+
+    <div class="error-box">
+      <h3>4. Erro de autorização municipal</h3>
+      <p><strong>Causa:</strong> Pode haver pendência no CNC (Cadastro Nacional Complementar) ou problema com o convênio do município de Campinas.</p>
+      <div class="solution">
+        <strong>Solução:</strong> Entre em contato com a Secretaria Municipal de Finanças de Campinas. O documento oficial do Emissor Nacional cita esses casos como responsabilidade do município.
+      </div>
+    </div>
+
+    <h2>Erros de emissão</h2>
+
+    <div class="error-box">
+      <h3>5. Código de serviço não encontrado</h3>
+      <p><strong>Causa:</strong> O código de tributação informado não corresponde a um serviço cadastrado ou não está disponível para o seu município.</p>
+      <div class="solution">
+        <strong>Solução:</strong> Verifique a lista de serviços disponíveis no Emissor Nacional. Se o serviço não aparecer, pode haver necessidade de cadastro prévio ou ajuste no CNC. Consulte seu contador.
+      </div>
+    </div>
+
+    <div class="error-box">
+      <h3>6. Dados do tomador inválidos</h3>
+      <p><strong>Causa:</strong> CNPJ ou CPF do tomador (cliente) está incorreto ou não existe na base da Receita.</p>
+      <div class="solution">
+        <strong>Solução:</strong> Confirme os dados com o cliente. Para PJ, consulte o CNPJ no site da Receita Federal. Para PF, verifique se o CPF está correto.
+      </div>
+    </div>
+
+    <div class="error-box">
+      <h3>7. Valor não pode ser zero</h3>
+      <p><strong>Causa:</strong> O campo de valor do serviço está em branco ou com zero.</p>
+      <div class="solution">
+        <strong>Solução:</strong> Informe o valor correto do serviço prestado. Mesmo para testes, é necessário informar um valor. Se precisar testar o sistema, use um valor simbólico e cancele a nota depois (se permitido).
+      </div>
+    </div>
+
+    <h2>Erros de sistema</h2>
+
+    <div class="error-box">
+      <h3>8. Emissor Nacional fora do ar / erro 500</h3>
+      <p><strong>Causa:</strong> Manutenção programada, instabilidade temporária ou problema de conexão local.</p>
+      <div class="solution">
+        <strong>Solução:</strong> Verifique sua conexão de internet, limpe o cache do navegador e tente em modo anônimo. Se o problema persistir, aguarde alguns minutos e tente novamente. Em casos extremos, acompanhe o Portal NFS-e para avisos de manutenção.
+      </div>
+    </div>
+
+    <div class="error-box">
+      <h3>9. Emiti no sistema errado</h3>
+      <p><strong>Causa:</strong> Você emitiu no sistema municipal antigo quando já deveria usar o Emissor Nacional.</p>
+      <div class="solution">
+        <strong>Solução:</strong> Consulte seu contador. Pode ser necessário cancelar a nota e reemitir no sistema correto. A partir da sua data de obrigatoriedade (1º/10, 1º/11 ou 1º/12/2026, dependendo do enquadramento em Campinas), use <strong>apenas</strong> o Emissor Nacional para evitar problemas fiscais.
+      </div>
+    </div>
+
+    <h2>Dicas gerais para evitar erros</h2>
+    <ul>
+      <li><strong>Teste antes da data:</strong> acesse o Emissor Nacional antes da sua data de obrigatoriedade para resolver problemas de acesso com calma.</li>
+      <li><strong>Guarde prints:</strong> se der erro, tire print da tela completa — ajuda no suporte.</li>
+      <li><strong>Confira o enquadramento:</strong> MEI, ME ou EPP têm formas de acesso diferentes. Use a correta.</li>
+      <li><strong>Mantenha dados atualizados:</strong> e-mail, telefone e dados cadastrais precisam estar corretos.</li>
+      <li><strong>Fale com o contador:</strong> para erros que envolvem impostos, enquadramento ou cancelamento, o contador é essencial.</li>
+    </ul>
+
+    <div class="card">
+      <strong>Veja também:</strong><br />
+      <a class="cta" href="../">Kit completo NFS-e Campinas</a>
+      <a class="cta" href="../emissor-nacional-passo-a-passo/">Passo a passo do Emissor</a>
+    </div>
+
+    <section class="card faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Perguntas frequentes</h2>
+      <details><summary><strong>Por que recebo "acesso negado" no Emissor Nacional como MEI?</strong></summary><p>O erro mais comum é a conta gov.br estar no nível bronze. O MEI precisa de conta gov.br prata ou ouro para acessar o Emissor Nacional. Aumente o nível pelo app gov.br ou pelo site.</p></details>
+      <details><summary><strong>ME ou EPP pode usar gov.br no Emissor Nacional?</strong></summary><p>Não no estágio atual. Segundo as Perguntas e Respostas oficiais (v1.1, 22/09/2026), o acesso via gov.br é exclusivo para MEI. ME e EPP devem usar certificado digital ou usuário e senha criados em "Fazer primeiro acesso".</p></details>
+      <details><summary><strong>O que é erro de autorização municipal no Emissor Nacional?</strong></summary><p>Pode indicar pendência no CNC (Cadastro Nacional Complementar) ou problema com o convênio do município. Procure a Secretaria Municipal de Finanças de Campinas para verificar.</p></details>
+      <details><summary><strong>Emiti a nota no sistema errado. O que fazer?</strong></summary><p>Se você emitiu no sistema municipal antigo quando já deveria usar o Emissor Nacional, consulte seu contador. Pode ser necessário cancelar a nota e reemitir no sistema correto.</p></details>
+      <details><summary><strong>O Emissor Nacional está fora do ar?</strong></summary><p>O Emissor Nacional raramente fica fora do ar. Se não conseguir acessar, verifique sua conexão, limpe o cache do navegador e tente em modo anônimo. Se o problema persistir, aguarde alguns minutos.</p></details>
+      <p class="upd">Atualizado em 14/10/2026. Não é assessoria contábil, jurídica ou fiscal.</p>
+    </section>
+
+    <section class="card sources"><h2>Fontes</h2><ul>
+      <li><a href="https://www.gov.br/nfse/pt-br/perguntas-frequentes/perguntas-e-respostas-nfs-e-v-1-1-20260922.pdf" target="_blank" rel="noopener">Perguntas e Respostas NFS-e v1.1 (22/09/2026)</a></li>
+      <li><a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">Emissor Nacional da NFS-e</a></li>
+      <li><a href="https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/guia-emissorpubliconacionalweb_snnfse-ern-v12.pdf" target="_blank" rel="noopener">Guia do Emissor Público Nacional Web (v1.2)</a></li>
+      <li><a href="https://portal-adm.campinas.sp.gov.br/servico/sistema-nfse-campinas" target="_blank" rel="noopener">Prefeitura de Campinas — Sistema NFSe</a></li>
+    </ul></section>
+    </article>
+
+    <nav class="card related" aria-label="Guias relacionados">
+      <h2>Guias relacionados</h2>
+      <ul>
+        <li><a href="../">Kit NFS-e Nacional em Campinas (checklist completo)</a></li>
+        <li><a href="../emissor-nacional-passo-a-passo/">Emissor Nacional passo a passo</a></li>
+        <li><a href="../mei-nfse-nacional-campinas/">MEI e NFS-e Nacional em Campinas</a></li>
+        <li><a href="../nfse-campinas-simples-nacional/">NFS-e para Simples Nacional (ME/EPP)</a></li>
+        <li><a href="../prazos-nfse-campinas-2026/">Prazos NFS-e Campinas 2026</a></li>
+      </ul>
+    </nav>
+    <footer>GABF · conteúdo informativo, sem garantia de conformidade · <a href="../../">todas as ferramentas</a></footer>
+  </div>
+</body>
+</html>
