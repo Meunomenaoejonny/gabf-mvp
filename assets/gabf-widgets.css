@@ -1,0 +1,13 @@
+.agenda{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;margin:1rem 0}
+.ag-next{font-size:.95rem;margin-bottom:.6rem}
+.agenda ul{list-style:none;padding:0;margin:0}
+.agenda li{font-size:.85rem;padding:.4rem 0;border-top:1px solid var(--border)}
+.agenda li span{color:var(--muted)}
+.ag-done{opacity:.55}
+.ag-note,.cap-note,.cap-msg{font-size:.75rem;color:var(--muted);margin-top:.4rem}
+.cap{background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:1rem 1.1rem;margin:1rem 0}
+.cap-h{font-weight:600;margin-bottom:.5rem}
+.cap-row{display:flex;gap:.5rem;flex-wrap:wrap}
+.cap-row input{flex:1;min-width:180px;padding:.7rem .8rem;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1rem}
+.cap-row button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:.7rem 1rem;font-weight:600;cursor:pointer}
+.cap-row button:disabled{opacity:.6;cursor:default}
