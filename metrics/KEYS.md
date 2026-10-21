@@ -24,6 +24,9 @@ O contador v3 separa robô de pessoa, conta engajamento e origem, e registra eve
 | `pv-checklist-print` | Checklist para imprimir | `/nfse-campinas/checklist-migracao-nfse-campinas/` |
 | `pv-meu-prazo` | Ferramenta "Meu prazo" | `/nfse-campinas/meu-prazo-nfse-campinas/` |
 | `pv-ti-nfse` | TI, software e plataformas | `/nfse-campinas/nfse-campinas-ti-software-plataformas/` |
+| `pv-tres-emissores` | Novo emissor ou Emissor Nacional? | `/nfse-campinas/novo-emissor-campinas-ou-emissor-nacional/` |
+| `pv-primeira-nota` | Primeira nota de novembro (Simples) | `/nfse-campinas/primeira-nota-novembro-simples/` |
+| `pv-b2b-escritorios` | Kit para escritórios contábeis | `/nfse-campinas/para-escritorios-contabeis/` |
 | `pv-orcamento` | Orçamento em PDF (waitlist) | `/orcamento-fakedoor/` |
 
 ### Detecção de Bot (bot-*)
@@ -67,6 +70,8 @@ O contador v3 separa robô de pessoa, conta engajamento e origem, e registra eve
 | Chave | Descrição |
 |-------|-----------|
 | `tool-meu-prazo` | Usuário usou a ferramenta "Meu prazo" |
+| `click-b2b-amostra` | Clique na amostra PDF do kit B2B |
+| `cap-b2b-b2b-escritorios` | Envio do form B2B (escritórios) |
 
 ### Origem do Tráfego (ref-*)
 
