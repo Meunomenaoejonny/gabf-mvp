@@ -1,10 +1,12 @@
-/* GABF — widgets v2 (2026-10-21). Agenda de prazos (contagem regressiva + link Google Agenda) + captura de 1 campo.
+/* GABF — widgets v3 (2026-10-23). Agenda de prazos (contagem regressiva + link Google Agenda) + captura de 1 campo + shop (buy box).
+   v3: SHOP widget with Kiwify checkout mode (Fase B self-serve).
    v2: (a) textos sensíveis à data (antes/depois de 1º/11/2026); (b) 1º/10 e 1º/12 descritos como "novo emissor municipal,
    fora do Simples" (correção factual: só o Simples vai ao Emissor Nacional em 1º/11); (c) variante B2B (escritórios),
    com nome do escritório opcional. Envia para o Google Form existente (EXP-013), marcando a origem no campo de nota. */
 (function () {
   var FORM = "https://docs.google.com/forms/d/e/1FAIpQLSetAvZJsOs86qdV1pUT5QLOtzPQ0bef2vhWU4--j0qV0chFrQ/formResponse";
   var NOME = "entry.48893674", EMAIL = "entry.840301044", NOTA = "entry.1044716741"; // Nome é obrigatório no Form → marcador fixo ou nome do escritório
+  var SHOP = { mode: "kiwify", kiwify: "https://pay.kiwify.com.br/DF46zM7" };
   function el(html) { var d = document.createElement("div"); d.innerHTML = html.trim(); return d.firstChild; }
   function hit(k) { if (window.gabfHit) window.gabfHit(k); }
   function page() { return window.gabfPage || "unknown"; }
@@ -64,5 +66,22 @@
         form.querySelector("button").disabled = true; hit((b2b ? "cap-b2b-" : "cap-") + page());
       }).catch(function () { msg.textContent = "Não foi possível enviar agora. Tente de novo em instantes."; });
     });
+  });
+
+  /* ---------- shop (buy box) — modo Kiwify para checkout self-serve ---------- */
+  document.querySelectorAll("[data-shop]").forEach(function (box) {
+    if (SHOP.mode !== "kiwify" || !SHOP.kiwify) return;
+    var variant = box.getAttribute("data-shop") || "nac";
+    var counterKey = variant === "b2b" ? "click-b2b-comprar" : (variant === "modelos" ? "click-nac-comprar-modelos" : "click-nac-comprar");
+    var btnText = "Comprar agora (PIX ou cartão)";
+    var guarantee = '<p class="shop-guarantee">Garantia de 7 dias: se não gostar, peça reembolso em <a href="https://reembolso.kiwify.com.br" target="_blank" rel="noopener">reembolso.kiwify.com.br</a>.</p>';
+    box.appendChild(el(
+      '<div class="shop-box">' +
+      '<a class="shop-btn" href="' + esc(SHOP.kiwify) + '" target="_blank" rel="noopener">' + btnText + '</a>' +
+      guarantee +
+      '</div>'
+    ));
+    var btn = box.querySelector(".shop-btn");
+    btn.addEventListener("click", function () { hit(counterKey); });
   });
 })();
