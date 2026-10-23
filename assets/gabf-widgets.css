@@ -11,3 +11,8 @@
 .cap-row input{flex:1;min-width:180px;padding:.7rem .8rem;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1rem}
 .cap-row button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:.7rem 1rem;font-weight:600;cursor:pointer}
 .cap-row button:disabled{opacity:.6;cursor:default}
+
+/* v3 (2026-10-23): compra e banner B2B */
+.b2b-banner{border-left:3px solid var(--accent);font-size:.9rem}
+.pixbox textarea{font-family:monospace;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)}
+.pix-copy{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:.5rem .9rem;font-weight:600;cursor:pointer;margin-top:.3rem}

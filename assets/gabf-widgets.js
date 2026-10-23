@@ -1,12 +1,22 @@
-/* GABF — widgets v3 (2026-10-23). Agenda de prazos (contagem regressiva + link Google Agenda) + captura de 1 campo + shop (buy box).
-   v3: SHOP widget with Kiwify checkout mode (Fase B self-serve).
-   v2: (a) textos sensíveis à data (antes/depois de 1º/11/2026); (b) 1º/10 e 1º/12 descritos como "novo emissor municipal,
-   fora do Simples" (correção factual: só o Simples vai ao Emissor Nacional em 1º/11); (c) variante B2B (escritórios),
-   com nome do escritório opcional. Envia para o Google Form existente (EXP-013), marcando a origem no campo de nota. */
+/* GABF — widgets v3 (2026-10-23). v2 + (a) bloco de compra [data-buy] com 3 modos (off | kiwify | pix), trocados só na
+   constante SHOP abaixo; (b) banner "É escritório contábil?" nas páginas NFS-e; (c) captura de e-mail desligável
+   (CAPTURE_ON): o dono não envia e-mails, então nenhum texto promete envio manual. A variante B2B deixa de prometer
+   "enviaremos o kit": o kit é entregue pelo checkout. */
 (function () {
+  /* ======== CONFIG (o único trecho que muda entre fases) ======== */
+  var SHOP = {
+    mode: "kiwify",         // "off" (sem venda aberta) | "kiwify" (recomendado) | "pix" (plano B)
+    kiwify: "https://pay.kiwify.com.br/DF46zM7",
+    pixForm: "",            // plano B: link do Google Form "Já paguei" (a página de confirmação do Form mostra o link de download)
+    pixPayload: "",
+    pixQr: "",
+    kitNacional: "https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/kit-escritorios-contabeis/",
+    kitCampinas: "https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/para-escritorios-contabeis/"
+  };
+  var CAPTURE_ON = false;   // true só se houver quem envie os avisos prometidos (o lembrete da Google Agenda segue ativo)
+  /* =============================================================== */
   var FORM = "https://docs.google.com/forms/d/e/1FAIpQLSetAvZJsOs86qdV1pUT5QLOtzPQ0bef2vhWU4--j0qV0chFrQ/formResponse";
   var NOME = "entry.48893674", EMAIL = "entry.840301044", NOTA = "entry.1044716741"; // Nome é obrigatório no Form → marcador fixo ou nome do escritório
-  var SHOP = { mode: "kiwify", kiwify: "https://pay.kiwify.com.br/DF46zM7" };
   function el(html) { var d = document.createElement("div"); d.innerHTML = html.trim(); return d.firstChild; }
   function hit(k) { if (window.gabfHit) window.gabfHit(k); }
   function page() { return window.gabfPage || "unknown"; }
@@ -34,14 +44,15 @@
 
   /* ---------- captura de 1 campo (+ variante B2B) ---------- */
   document.querySelectorAll("[data-capture]").forEach(function (box) {
+    if (!CAPTURE_ON) { box.parentNode && box.parentNode.removeChild(box); return; }
     var origem = box.getAttribute("data-capture") || page();
     var b2b = box.getAttribute("data-capture-variant") === "b2b";
-    var h = b2b ? "Receba o kit e as condições de lançamento no e-mail do escritório."
+    var h = b2b ? "Quer ser avisado da atualização de janeiro/2027 (IBS/CBS)? Deixe o e-mail do escritório."
       : (AFTER_NOV1 ? "Receba um aviso por e-mail sobre as próximas etapas (1º/12 em Campinas e IBS/CBS em 1º/01/2027)."
                     : "Receba um aviso por e-mail antes de 1º/11 (e se o prazo mudar).");
     var extra = b2b ? '<input type="text" class="cap-org" placeholder="Nome do escritório (opcional)" aria-label="Nome do escritório" maxlength="120">' : "";
-    var btn = b2b ? "Quero o kit" : "Quero o aviso";
-    var note = b2b ? "Usamos o e-mail só para enviar o kit e as condições. Sem lista de spam. Material informativo, que não é assessoria."
+    var btn = b2b ? "Quero ser avisado" : "Quero o aviso";
+    var note = b2b ? "Usamos o e-mail só para esse aviso. Sem lista de spam. Material informativo, que não é assessoria."
       : "Grátis. Só o e-mail, nada mais. Usamos apenas para avisos sobre os prazos da NFS-e. Não é assessoria fiscal.";
     box.appendChild(el(
       '<form class="cap" novalidate>' +
@@ -61,27 +72,49 @@
       body.set(NOME, b2b ? (org || "(b2b site)") : "(captura site)"); body.set(EMAIL, email);
       body.set(NOTA, (b2b ? "captura-b2b|" : "captura-1-campo|") + origem + "|" + location.pathname);
       fetch(FORM, { method: "POST", mode: "no-cors", body: body }).then(function () {
-        msg.textContent = b2b ? ("Recebido! Enviaremos o kit e as condições para " + email + " em até 1 dia útil.")
+        msg.textContent = b2b ? ("Recebido: " + email + ". O kit completo é entregue na hora pelo botão de compra desta página.")
           : ("Pronto! Você vai receber o aviso em " + email + ". O checklist completo já está nesta página.");
         form.querySelector("button").disabled = true; hit((b2b ? "cap-b2b-" : "cap-") + page());
       }).catch(function () { msg.textContent = "Não foi possível enviar agora. Tente de novo em instantes."; });
     });
   });
 
-  /* ---------- shop (buy box) — modo Kiwify para checkout self-serve ---------- */
-  document.querySelectorAll("[data-shop]").forEach(function (box) {
-    if (SHOP.mode !== "kiwify" || !SHOP.kiwify) return;
-    var variant = box.getAttribute("data-shop") || "nac";
+  /* ---------- bloco de compra [data-buy] ---------- */
+  document.querySelectorAll("[data-buy]").forEach(function (a) {
+    var st = a.parentNode && a.parentNode.parentNode ? a.parentNode.parentNode.querySelector("[data-buy-status]") : null;
+    var variant = a.getAttribute("data-buy") || "nac";
     var counterKey = variant === "b2b" ? "click-b2b-comprar" : (variant === "modelos" ? "click-nac-comprar-modelos" : "click-nac-comprar");
-    var btnText = "Comprar agora (PIX ou cartão)";
-    var guarantee = '<p class="shop-guarantee">Garantia de 7 dias: se não gostar, peça reembolso em <a href="https://reembolso.kiwify.com.br" target="_blank" rel="noopener">reembolso.kiwify.com.br</a>.</p>';
-    box.appendChild(el(
-      '<div class="shop-box">' +
-      '<a class="shop-btn" href="' + esc(SHOP.kiwify) + '" target="_blank" rel="noopener">' + btnText + '</a>' +
-      guarantee +
-      '</div>'
-    ));
-    var btn = box.querySelector(".shop-btn");
-    btn.addEventListener("click", function () { hit(counterKey); });
+    if (SHOP.mode === "kiwify" && SHOP.kiwify) {
+      a.href = SHOP.kiwify; a.rel = "noopener";
+      a.textContent = "Comprar o kit por R$ 97 (PIX ou cartão)";
+      a.setAttribute("data-count", counterKey);
+      if (st) st.appendChild(el('<p class="shop-guarantee">Garantia de 7 dias: se não gostar, peça reembolso em <a href="https://reembolso.kiwify.com.br" target="_blank" rel="noopener">reembolso.kiwify.com.br</a>.</p>'));
+    } else if (SHOP.mode === "pix") {
+      a.href = "#pix"; a.textContent = "Pagar R$ 97 por PIX";
+      a.setAttribute("data-count", counterKey);
+      if (st && !st.querySelector(".pixbox")) st.appendChild(el(
+        '<div class="pixbox card" id="pix"><p><strong>1.</strong> Pague <strong>R$ 97,00</strong> por PIX: leia o QR Code no app do banco ou use o "copia e cola".</p>' +
+        '<p><img src="' + SHOP.pixQr + '" alt="QR Code PIX de R$ 97,00" width="220" height="220" loading="lazy"></p>' +
+        '<p><textarea readonly rows="3" style="width:100%;font-size:.75rem" aria-label="PIX copia e cola">' + esc(SHOP.pixPayload) + '</textarea>' +
+        '<button type="button" class="pix-copy">Copiar código PIX</button></p>' +
+        '<p><strong>2.</strong> Depois de pagar, <a data-count="pix-ja-paguei-' + page() + '" target="_blank" rel="noopener" href="' + SHOP.pixForm + '">preencha o formulário "Já paguei"</a>: o link de download aparece na tela, na hora.</p>' +
+        '<p class="small">Garantia de 7 dias: para reembolso, responda no mesmo formulário com a chave PIX de devolução.</p></div>'));
+      var cp = st && st.querySelector(".pix-copy");
+      if (cp) cp.addEventListener("click", function () { try { navigator.clipboard.writeText(SHOP.pixPayload); cp.textContent = "Copiado!"; hit("pix-copia-" + page()); } catch (e) {} });
+    } else {
+      a.removeAttribute("href"); a.removeAttribute("data-count"); a.setAttribute("aria-disabled", "true"); a.style.opacity = ".55"; a.style.cursor = "default";
+      a.textContent = "Compra ainda não aberta";
+      if (st) st.appendChild(el('<p class="small">A compra automática ainda não foi ativada. Enquanto isso, veja a amostra grátis e os modelos de comunicado.</p>'));
+    }
   });
+
+  /* ---------- banner "É escritório contábil?" (páginas NFS-e sem bloco de compra) ---------- */
+  (function () {
+    var p = location.pathname;
+    if (!/\/(nfse-campinas|nfse-nacional)\//.test(p) || document.querySelector("[data-buy]")) return;
+    var href = /\/nfse-campinas\//.test(p) ? SHOP.kitCampinas : SHOP.kitNacional;
+    var anchor = document.querySelector("nav.related") || document.querySelector("footer");
+    if (!anchor) return;
+    anchor.parentNode.insertBefore(el('<aside class="card b2b-banner"><strong>É escritório contábil?</strong> Kit pronto para orientar a carteira do Simples na NFS-e Nacional: guia do cliente com a sua marca (DOCX), 4 comunicados, planilha de triagem e folha da primeira semana. R$ 97, garantia de 7 dias. <a data-count="banner-b2b-' + page() + '" href="' + href + '">Ver o kit</a></aside>'), anchor);
+  })();
 })();
