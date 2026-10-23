@@ -5,11 +5,11 @@
 (function () {
   /* ======== CONFIG (o único trecho que muda entre fases) ======== */
   var SHOP = {
-    mode: "off",            // "off" (sem venda aberta) | "kiwify" (recomendado) | "pix" (plano B)
-    kiwify: "",             // ex.: "https://pay.kiwify.com.br/XXXXXXX" (link de checkout do produto)
+    mode: "kiwify",         // "off" (sem venda aberta) | "kiwify" (recomendado) | "pix" (plano B)
+    kiwify: "https://pay.kiwify.com.br/DF46zM7",
     pixForm: "",            // plano B: link do Google Form "Já paguei" (a página de confirmação do Form mostra o link de download)
-    pixPayload: "00020101021126360014br.gov.bcb.pix0114+5535999140387520400005303986540597.005802BR5916JOAO MARCOS PILZ6008CAMPINAS62130509KITNFSE9763045E38",
-    pixQr: "https://meunomenaoejonny.github.io/gabf-mvp/assets/pix-kit-nfse-97.png",
+    pixPayload: "",
+    pixQr: "",
     kitNacional: "https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/kit-escritorios-contabeis/",
     kitCampinas: "https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/para-escritorios-contabeis/"
   };
@@ -78,14 +78,20 @@
       }).catch(function () { msg.textContent = "Não foi possível enviar agora. Tente de novo em instantes."; });
     });
   });
+
   /* ---------- bloco de compra [data-buy] ---------- */
   document.querySelectorAll("[data-buy]").forEach(function (a) {
     var st = a.parentNode && a.parentNode.parentNode ? a.parentNode.parentNode.querySelector("[data-buy-status]") : null;
+    var variant = a.getAttribute("data-buy") || "nac";
+    var counterKey = variant === "b2b" ? "click-b2b-comprar" : (variant === "modelos" ? "click-nac-comprar-modelos" : "click-nac-comprar");
     if (SHOP.mode === "kiwify" && SHOP.kiwify) {
       a.href = SHOP.kiwify; a.rel = "noopener";
       a.textContent = "Comprar o kit por R$ 97 (PIX ou cartão)";
+      a.setAttribute("data-count", counterKey);
+      if (st) st.appendChild(el('<p class="shop-guarantee">Garantia de 7 dias: se não gostar, peça reembolso em <a href="https://reembolso.kiwify.com.br" target="_blank" rel="noopener">reembolso.kiwify.com.br</a>.</p>'));
     } else if (SHOP.mode === "pix") {
       a.href = "#pix"; a.textContent = "Pagar R$ 97 por PIX";
+      a.setAttribute("data-count", counterKey);
       if (st && !st.querySelector(".pixbox")) st.appendChild(el(
         '<div class="pixbox card" id="pix"><p><strong>1.</strong> Pague <strong>R$ 97,00</strong> por PIX: leia o QR Code no app do banco ou use o "copia e cola".</p>' +
         '<p><img src="' + SHOP.pixQr + '" alt="QR Code PIX de R$ 97,00" width="220" height="220" loading="lazy"></p>' +
