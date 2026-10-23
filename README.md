@@ -18,6 +18,14 @@ Guia completo e gratuito para a migração da NFS-e em Campinas para o padrão n
 
 Acesse: [meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/](https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/)
 
+## Modelos grátis para escritórios contábeis: NFS-e Nacional do Simples (1º/11/2026)
+
+A partir de 1º/11/2026, ME e EPP do Simples Nacional emitem NFS-e somente pelo Emissor Nacional (Res. CGSN 191/2026).
+
+- [Modelo de comunicado aos clientes do Simples](https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/modelo-comunicado-clientes-simples/): e-mail, WhatsApp, lembrete de 29-30/10 e mensagem pós-1º/11, grátis
+- [Planilha básica de triagem da carteira (CSV)](https://meunomenaoejonny.github.io/gabf-mvp/assets/planilha-triagem-basica-nfse-nacional.csv), grátis
+- [Kit Virada NFS-e Nacional para escritórios](https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/kit-escritorios-contabeis/): guia do cliente editável com a marca do escritório, 4 comunicados em DOCX, planilha XLSX completa e folha da primeira semana (R$ 97, garantia de 7 dias)
+
 ## Outras ferramentas
 
 - [Calculadora de limite MEI 2026](https://meunomenaoejonny.github.io/gabf-mvp/mei-limite/) — quanto do limite de R$ 81 mil você já usou
