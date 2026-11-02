@@ -28,6 +28,7 @@ O contador v3 separa robô de pessoa, conta engajamento e origem, e registra eve
 | `pv-primeira-nota` | Primeira nota de novembro (Simples) | `/nfse-campinas/primeira-nota-novembro-simples/` |
 | `pv-b2b-escritorios` | Kit para escritórios contábeis | `/nfse-campinas/para-escritorios-contabeis/` |
 | `pv-orcamento` | Orçamento em PDF (waitlist) | `/orcamento-fakedoor/` |
+| `pv-erros-primeiro-acesso` | Primeiro acesso ao Emissor Nacional e erros de login | `/nfse-nacional/erros-emissor-nacional-primeiro-acesso/` |
 
 ### Detecção de Bot (bot-*)
 
@@ -71,6 +72,8 @@ O contador v3 separa robô de pessoa, conta engajamento e origem, e registra eve
 |-------|-----------|
 | `tool-meu-prazo` | Usuário usou a ferramenta "Meu prazo" |
 | `click-b2b-amostra` | Clique na amostra PDF do kit B2B |
+| `click-cta-kit-erros-primeiro-acesso` | CTA do kit na página de primeiro acesso (nacional) |
+| `click-xlink-erros-primeiro-acesso` | Link da página de erros de Campinas para a página nacional de primeiro acesso |
 | `cap-b2b-b2b-escritorios` | Envio do form B2B (escritórios) |
 
 ### Origem do Tráfego (ref-*)

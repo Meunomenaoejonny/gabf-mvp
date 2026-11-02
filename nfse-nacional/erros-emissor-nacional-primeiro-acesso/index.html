@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Primeiro acesso ao Emissor Nacional da NFS-e: passo a passo e erros comuns (2026)</title>
+  <meta name="description" content="Como fazer o primeiro acesso em nfse.gov.br/EmissorNacional e o que fazer com &quot;Não foi possível recuperar a lista de municípios&quot; e &quot;Não foi possível recuperar informações do Contribuinte&quot;. Com fontes oficiais." />
+  <link rel="canonical" href="https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erros-emissor-nacional-primeiro-acesso/" />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="alternate" hreflang="pt-BR" href="https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erros-emissor-nacional-primeiro-acesso/" />
+  <link rel="alternate" hreflang="x-default" href="https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erros-emissor-nacional-primeiro-acesso/" />
+  <meta name="theme-color" content="#0969da" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="GABF — ferramentas para MEI e prestadores" />
+  <meta property="og:title" content="Primeiro acesso ao Emissor Nacional da NFS-e: passo a passo e erros comuns (2026)" />
+  <meta property="og:description" content="Como fazer o primeiro acesso em nfse.gov.br/EmissorNacional e o que fazer com &quot;Não foi possível recuperar a lista de municípios&quot; e &quot;Não foi possível recuperar informações do Contribuinte&quot;. Com fontes oficiais." />
+  <meta property="og:url" content="https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erros-emissor-nacional-primeiro-acesso/" />
+  <meta property="og:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Primeiro acesso ao Emissor Nacional da NFS-e: passo a passo e erros comuns (2026)" />
+  <meta name="twitter:description" content="Como fazer o primeiro acesso em nfse.gov.br/EmissorNacional e o que fazer com &quot;Não foi possível recuperar a lista de municípios&quot; e &quot;Não foi possível recuperar informações do Contribuinte&quot;. Com fontes oficiais." />
+  <meta name="twitter:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Primeiro acesso ao Emissor Nacional da NFS-e: passo a passo e erros de login",
+  "inLanguage": "pt-BR",
+  "datePublished": "2026-11-02",
+  "dateModified": "2026-11-02",
+  "mainEntityOfPage": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erros-emissor-nacional-primeiro-acesso/",
+  "author": {
+    "@type": "Organization",
+    "name": "GABF"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GABF"
+  },
+  "image": "https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qual é o endereço oficial do Emissor Nacional da NFS-e?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É www.nfse.gov.br/EmissorNacional. A tela de login tem três opções: usuário e senha (com o link \"Fazer primeiro acesso\"), certificado digital e gov.br."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que significa \"Não foi possível recuperar informações do Contribuinte\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Segundo o Guia do Emissor Web e as Perguntas Frequentes oficiais, aparece quando o CPF ou o CNPJ digitado não é encontrado na base da Receita Federal. Nas telas de emissão, também pode indicar CNPJ inexistente na data de competência, situação cadastral suspensa ou inapta, ou bloqueio no cadastro do município (CNC)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que significa \"Não foi possível recuperar a lista de municípios\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Essa mensagem não aparece na documentação oficial que consultamos. Pelos relatos públicos, ela surge ao informar a data de competência e se alterna com o aviso de cadastro \"não encontrado ou não habilitado\". As causas prováveis são instabilidade ou cadastro ainda não habilitado para aquela data, mas não há confirmação oficial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ME ou EPP do Simples pode entrar pelo gov.br?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As Perguntas Frequentes oficiais (v1.2, 27/10/2026) dizem que o botão gov.br é só para MEI. ME e EPP devem usar certificado digital ou usuário e senha criados em \"Fazer primeiro acesso\". Desde 1º/11/2026 existe a alternância de perfis depois do login, mas isso não muda a orientação das Perguntas Frequentes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Não tenho recibo de imposto de renda nem título de eleitor. Consigo criar senha?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Segundo o Guia do Emissor Web, sem recibo da declaração o sistema usa o título de eleitor. Sem título de eleitor não é possível criar usuário e senha: o caminho é o certificado digital ou o atendimento presencial no município."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A quem peço ajuda se nada funcionar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Portal NFS-e informa que o e-mail nacional de atendimento foi desativado. A orientação oficial é procurar a prefeitura do seu município; MEI deve procurar o Sebrae. Leve print da tela com a mensagem, a data e o horário."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "GABF",
+      "item": "https://meunomenaoejonny.github.io/gabf-mvp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "NFS-e Nacional",
+      "item": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/kit-escritorios-contabeis/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Primeiro acesso e erros de login",
+      "item": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erros-emissor-nacional-primeiro-acesso/"
+    }
+  ]
+}
+  </script>
+  <script src="../../assets/count.js" data-page="erros-primeiro-acesso" defer></script>
+  <link rel="stylesheet" href="../../assets/gabf-widgets.css" />
+  <script src="../../assets/gabf-widgets.js" defer></script>
+  <style>
+    :root{--bg:#f4f7fb;--surface:#fff;--text:#1a2332;--muted:#5a6b80;--border:#d0dae6;--accent:#0969da;--warn:#9a6700;--ok:#1a7f37;--danger:#cf222e;--radius:12px}
+    @media (prefers-color-scheme:dark){:root{--bg:#0f1419;--surface:#1a2332;--text:#e8eef6;--muted:#8b9cb3;--border:#2d3a4f;--accent:#4493f8;--warn:#d29922;--ok:#3fb950;--danger:#f85149}}
+    *{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:1.25rem}
+    .wrap{max-width:720px;margin:0 auto}a{color:var(--accent)}h1{font-size:1.6rem;line-height:1.25;margin:.3rem 0 .6rem}h2{font-size:1.15rem;margin:1.4rem 0 .5rem}h3{font-size:1rem;margin:1.2rem 0 .4rem}
+    .meta{font-size:.8rem;color:var(--muted)}.crumbs{font-size:.8rem}.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.15rem;margin:1rem 0}
+    .disclaimer{font-size:.85rem;border-left:3px solid var(--warn);padding:.7rem .9rem;background:var(--surface);border-radius:0 8px 8px 0;margin:1rem 0}
+    .answer{border-left:4px solid var(--accent)}
+    .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:.8rem 1.1rem;border-radius:8px;margin:.3rem .4rem .3rem 0}
+    ol li,ul li{margin-bottom:.35rem}p{margin:.6rem 0}.sources{font-size:.82rem;word-break:break-word}footer{margin-top:2rem;font-size:.75rem;color:var(--muted);text-align:center}
+    table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{border:1px solid var(--border);padding:.45rem .55rem;text-align:left;vertical-align:top}
+    .faq details{border-top:1px solid var(--border);padding:.6rem 0}.faq summary{cursor:pointer;font-size:.92rem}.faq details p{margin-top:.45rem;font-size:.9rem}
+    .faq a,.related a{color:var(--accent)}.related ul{padding-left:1.1rem}.related li{margin-bottom:.35rem;font-size:.92rem}.upd{font-size:.75rem;opacity:.75;margin-top:.6rem}
+    .error-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.15rem;margin:1rem 0;border-left:4px solid var(--danger)}
+    .error-box h3{color:var(--danger);margin-top:0}
+    .solution{background:color-mix(in srgb, var(--ok) 10%, var(--surface));border-left:3px solid var(--ok);padding:.7rem .9rem;border-radius:0 8px 8px 0;margin:.5rem 0}
+    .solution strong{color:var(--ok)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">GABF</a> › <a href="../kit-escritorios-contabeis/">NFS-e Nacional</a> › Primeiro acesso e erros de login</p>
+    <article>
+    <h1>Primeiro acesso ao Emissor Nacional da NFS-e: passo a passo e erros de login</h1>
+    <p class="meta">Publicado e atualizado em 02/11/2026 · Conteúdo informativo, <strong>não é assessoria</strong> contábil, jurídica ou fiscal.</p>
+
+    <div class="card answer">
+      <strong>Resposta curta:</strong> o Emissor Nacional fica em <a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">www.nfse.gov.br/EmissorNacional</a>. MEI entra pelo <strong>gov.br prata ou ouro</strong>. ME/EPP e pessoa física usam <strong>certificado digital</strong> ou criam usuário e senha em <strong>"Fazer primeiro acesso"</strong>.
+      <ul>
+        <li><em>"Não foi possível recuperar informações do Contribuinte"</em>: o CPF ou CNPJ não foi encontrado na Receita Federal. Confira a digitação e a situação cadastral.</li>
+        <li><em>"Não foi possível recuperar a lista de municípios"</em>: <strong>não consta na documentação oficial</strong>. Pelos relatos, tem relação com instabilidade ou com cadastro ainda não habilitado para a data de competência. Tente de novo mais tarde, confira a data e, se continuar, procure a prefeitura.</li>
+      </ul>
+    </div>
+
+    <div class="disclaimer"><strong>Atenção:</strong> as mensagens e causas abaixo vêm do Guia do Emissor Web v1.3 (31/10/2026) e das Perguntas Frequentes v1.2 (27/10/2026) do Portal NFS-e. Quando a causa não tem fonte oficial, dizemos isso. Para o seu caso concreto, fale com o contador ou com a prefeitura.</div>
+
+    <h2>Qual forma de acesso usar</h2>
+    <table>
+      <thead><tr><th>Quem</th><th>Forma indicada nas fontes oficiais</th></tr></thead>
+      <tbody>
+        <tr><td>MEI</td><td>gov.br nível <strong>prata ou ouro</strong>. Com o login pelo CPF, o sistema entra direto no perfil do CNPJ do MEI. Bronze não é aceito.</td></tr>
+        <tr><td>ME/EPP (inclusive do Simples)</td><td><strong>Certificado digital</strong> (e-CNPJ, ou e-CPF de procurador) ou <strong>usuário e senha</strong> via "Fazer primeiro acesso". Pelo botão gov.br, aparece "A emissão de NFS-e é permitida somente para empresas optantes pelo MEI".</td></tr>
+        <tr><td>Pessoa física (autônomo)</td><td>Usuário e senha ou certificado digital. Para entrar com usuário e senha, a pessoa física precisa estar cadastrada e autorizada no CNC do município.</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Novidade de 1º/11/2026:</strong> o Portal NFS-e anunciou a <em>alternância de perfis</em>. Depois do login, o responsável legal pode atuar pelo CNPJ da empresa, e um procurador pode atuar com procuração eletrônica da Receita, no menu "Procuração/Representação" (Guia v1.3, item 11). As Perguntas Frequentes v1.2 ainda dizem que o botão gov.br é só para MEI. Para ME/EPP, o caminho seguro continua sendo o certificado digital ou o usuário e senha.</p>
+    <p>Lembre também: <strong>nenhuma forma de login dispensa a autorização do município</strong> no Cadastro Nacional Complementar (CNC), segundo as Perguntas Frequentes (item 3.3). Para competências a partir de 1º/11/2026, porém, o Portal NFS-e informa que todos os optantes do Simples Nacional estão habilitados no ambiente nacional, mesmo que não constem no cadastro municipal.</p>
+
+    <h2>Passo a passo do "Fazer primeiro acesso" (usuário e senha)</h2>
+    <ol>
+      <li>Abra <a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">www.nfse.gov.br/EmissorNacional</a> e clique em <strong>"Fazer primeiro acesso"</strong>.</li>
+      <li>Escolha <strong>Pessoa Física</strong> (informe CPF e data de nascimento) ou <strong>Pessoa Jurídica</strong> (informe CNPJ, CPF do responsável e a data de nascimento do responsável).</li>
+      <li>Informe o <strong>título de eleitor</strong> pedido pelo sistema. Se a pessoa declarou IRPF, o sistema pede os <strong>números dos recibos das duas últimas declarações</strong>; na PJ, valem os recibos do CPF responsável pelo CNPJ.</li>
+      <li>Cadastre um <strong>e-mail</strong> e crie a <strong>senha</strong>.</li>
+      <li>Digite o <strong>código de segurança</strong> enviado ao e-mail. Se você parar antes dessa etapa, a senha não é gravada, e depois aparece "usuário e/ou senha inválidos".</li>
+    </ol>
+    <p>Sem nenhum recibo de IRPF, o sistema usa o título de eleitor do cadastro CPF. Sem título de eleitor, não dá para criar usuário e senha: use certificado digital ou procure o município (Guia v1.3, item 10.3).</p>
+
+    <h2>Erros do primeiro acesso e do login</h2>
+
+    <div class="error-box">
+      <h3>"Não foi possível recuperar informações do Contribuinte."</h3>
+      <p><strong>O que diz a fonte oficial:</strong> no primeiro acesso, aparece quando o <strong>CPF</strong> (pessoa física) ou o <strong>CNPJ</strong> (pessoa jurídica) não existe na base da Receita Federal. Nas Perguntas Frequentes (item 30.1), a mesma mensagem aparece quando o documento não é localizado para a <strong>data de competência</strong> informada. Ela também pode vir de situação cadastral irregular (suspensa ou inapta) ou de bloqueio no CNC do município.</p>
+      <div class="solution"><strong>O que fazer:</strong> confira a digitação. Veja a situação na <a href="https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp" target="_blank" rel="noopener">consulta de CNPJ</a> ou na <a href="https://servicos.receita.fazenda.gov.br/Servicos/CPF/ConsultaSituacao/ConsultaPublica.asp" target="_blank" rel="noopener">consulta de CPF</a> da Receita, que deve estar "Ativa"/regular. Confirme se o CNPJ já existia na data de competência da nota. Se tudo estiver certo, peça à prefeitura que verifique seu cadastro no CNC.</div>
+    </div>
+
+    <div class="error-box">
+      <h3>"Não foi possível recuperar a lista de municípios."</h3>
+      <p><strong>Sem fonte oficial:</strong> não encontramos essa mensagem no Guia do Emissor Web v1.3 nem nas Perguntas Frequentes v1.2. Em relatos públicos de contadores (outubro/2026), ela aparece logo depois de informar a data de competência. Também se alterna com o aviso "Na data de competência informada, o cadastro (...) não foi encontrado ou não está habilitado para emissão de NFS-e (...). Por favor, informe outra data de competência". O Guia explica que a lista de municípios é preenchida a partir do cadastro (Receita/CNC), conforme o convênio de cada município.</p>
+      <p><strong>Causas prováveis, não confirmadas:</strong> (a) instabilidade temporária do sistema; (b) cadastro ainda não habilitado para aquela data de competência. Exemplo: em municípios com emissor próprio, empresas do Simples só passam a emitir no nacional com competência a partir de 1º/11/2026.</p>
+      <div class="solution"><strong>O que fazer:</strong>
+        <ol>
+          <li>Confira a <strong>data de competência</strong>. Para ME/EPP do Simples que antes emitiam no sistema da prefeitura, notas com competência anterior a 1º/11/2026 continuam no sistema municipal.</li>
+          <li>Recarregue a página, saia e entre de novo, ou teste em janela anônima ou em outro navegador. Ajuda quando a causa é instabilidade, mas não há garantia.</li>
+          <li>Veja se o seu município está ativo no <a href="https://www.gov.br/nfse/pt-br/municipios/monitoramento-adesoes" target="_blank" rel="noopener">monitoramento de adesões</a> e acompanhe os avisos em <a href="https://www.gov.br/nfse/pt-br/noticias" target="_blank" rel="noopener">gov.br/nfse/noticias</a>.</li>
+          <li>Se persistir, tire print com data e horário e procure a prefeitura.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="error-box">
+      <h3>"Não foi possível criar seu usuário"</h3>
+      <p><strong>Fonte oficial (Perguntas Frequentes, item 3.2):</strong> é uma mensagem genérica. Verifique nesta ordem:</p>
+      <ol>
+        <li>Você é MEI tentando usuário e senha? As Perguntas Frequentes indicam gov.br prata ou ouro para MEI.</li>
+        <li>Você não é MEI e usou gov.br? Essa combinação é bloqueada.</li>
+        <li>O convênio do município está ativo?</li>
+        <li>Você está "1-Autorizado" no CNC, com data de autorização igual ou anterior a hoje?</li>
+        <li>Os dados batem com a Receita (título de eleitor ou recibos do IRPF, CPF do responsável, data de nascimento)?</li>
+      </ol>
+      <div class="solution"><strong>Se nada resolver:</strong> atendimento presencial na prefeitura, onde o gestor pode regularizar o CNC.</div>
+    </div>
+
+    <div class="error-box">
+      <h3>"O CPF informado não corresponde ao CPF responsável pelo CNPJ informado."</h3>
+      <p><strong>Fonte oficial:</strong> no primeiro acesso de pessoa jurídica, o CPF digitado não é o do responsável legal registrado no CNPJ.</p>
+      <div class="solution"><strong>O que fazer:</strong> use o CPF do responsável que aparece no cadastro do CNPJ. Quem não é o responsável deve usar procuração eletrônica (serviço NFS-e no Portal de Serviços da Receita) ou o certificado digital da empresa.</div>
+    </div>
+
+    <div class="error-box">
+      <h3>"Não foi possível obter a(s) empresa(s) que o usuário é responsável"</h3>
+      <p><strong>Fonte oficial (item 3.7):</strong> aparece no login via gov.br quando não há CNPJ ativo ligado ao CPF, quando o CPF não é o responsável pelo CNPJ, ou por instabilidade na integração entre o Emissor, o gov.br e a Receita.</p>
+      <div class="solution"><strong>O que fazer:</strong> confira na consulta de CNPJ da Receita quem é o responsável. Se for instabilidade, entre com usuário e senha em vez do gov.br.</div>
+    </div>
+
+    <div class="error-box">
+      <h3>"Usuário e/ou senha inválidos" logo depois de criar a senha</h3>
+      <p><strong>Fonte oficial (item 3.8):</strong> as causas listadas são:</p>
+      <ul>
+        <li>documento diferente do usado na criação;</li>
+        <li>pessoa física sem habilitação no CNC;</li>
+        <li>código do e-mail não confirmado;</li>
+        <li>MEI tentando usuário e senha, quando deve priorizar o gov.br.</li>
+      </ul>
+      <div class="solution"><strong>O que fazer:</strong> refaça com o mesmo CPF/CNPJ e conclua a etapa do código. Se persistir, procure a prefeitura.</div>
+    </div>
+
+    <div class="error-box">
+      <h3>"A emissão de NFS-e é permitida somente para empresas optantes pelo MEI"</h3>
+      <p><strong>Fonte oficial (item 3.1):</strong> ME/EPP clicou no botão gov.br.</p>
+      <div class="solution"><strong>O que fazer:</strong> use certificado digital ou "Fazer primeiro acesso".</div>
+    </div>
+
+    <h2>Onde pedir ajuda</h2>
+    <p>Segundo a página <a href="https://www.gov.br/nfse/pt-br/canais-de-atendimento" target="_blank" rel="noopener">Canais de Atendimento</a> do Portal NFS-e, o e-mail nacional de atendimento foi desativado. A orientação oficial é procurar a <strong>prefeitura</strong>; MEI deve procurar o <strong>Sebrae</strong>. Leve print da mensagem, a data e o horário, e diga qual forma de acesso você usou.</p>
+    <p>Em Campinas? Veja também a lista geral de <a href="../../nfse-campinas/erros-emissor-nacional-nfse/">erros comuns no Emissor Nacional (Campinas)</a> e o <a href="../../nfse-campinas/checklist-migracao-nfse-campinas/">checklist de migração</a>.</p>
+
+    <aside class="card" data-b2b-cta>
+      <strong>É escritório contábil?</strong> O <a href="../kit-escritorios-contabeis/" data-count="cta-kit-erros-primeiro-acesso">Kit Virada NFS-e Nacional</a> traz um guia do cliente editável com a marca do escritório, 4 comunicados, planilha de triagem da carteira e folha da primeira semana. R$ 97, entrega digital e garantia de 7 dias.
+    </aside>
+
+    <section class="card faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Perguntas frequentes</h2>
+      <details><summary><strong>Qual é o endereço oficial do Emissor Nacional da NFS-e?</strong></summary><p>É www.nfse.gov.br/EmissorNacional. A tela de login tem três opções: usuário e senha (com o link &quot;Fazer primeiro acesso&quot;), certificado digital e gov.br.</p></details>
+      <details><summary><strong>O que significa &quot;Não foi possível recuperar informações do Contribuinte&quot;?</strong></summary><p>Segundo o Guia do Emissor Web e as Perguntas Frequentes oficiais, aparece quando o CPF ou o CNPJ digitado não é encontrado na base da Receita Federal. Nas telas de emissão, também pode indicar CNPJ inexistente na data de competência, situação cadastral suspensa ou inapta, ou bloqueio no cadastro do município (CNC).</p></details>
+      <details><summary><strong>O que significa &quot;Não foi possível recuperar a lista de municípios&quot;?</strong></summary><p>Essa mensagem não aparece na documentação oficial que consultamos. Pelos relatos públicos, ela surge ao informar a data de competência e se alterna com o aviso de cadastro &quot;não encontrado ou não habilitado&quot;. As causas prováveis são instabilidade ou cadastro ainda não habilitado para aquela data, mas não há confirmação oficial.</p></details>
+      <details><summary><strong>ME ou EPP do Simples pode entrar pelo gov.br?</strong></summary><p>As Perguntas Frequentes oficiais (v1.2, 27/10/2026) dizem que o botão gov.br é só para MEI. ME e EPP devem usar certificado digital ou usuário e senha criados em &quot;Fazer primeiro acesso&quot;. Desde 1º/11/2026 existe a alternância de perfis depois do login, mas isso não muda a orientação das Perguntas Frequentes.</p></details>
+      <details><summary><strong>Não tenho recibo de imposto de renda nem título de eleitor. Consigo criar senha?</strong></summary><p>Segundo o Guia do Emissor Web, sem recibo da declaração o sistema usa o título de eleitor. Sem título de eleitor não é possível criar usuário e senha: o caminho é o certificado digital ou o atendimento presencial no município.</p></details>
+      <details><summary><strong>A quem peço ajuda se nada funcionar?</strong></summary><p>O Portal NFS-e informa que o e-mail nacional de atendimento foi desativado. A orientação oficial é procurar a prefeitura do seu município; MEI deve procurar o Sebrae. Leve print da tela com a mensagem, a data e o horário.</p></details>
+      <p class="upd">Atualizado em 02/11/2026. Não é assessoria contábil, jurídica ou fiscal.</p>
+    </section>
+
+    <section class="card sources"><h2>Fontes</h2><ul>
+      <li><a href="https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/guia-emissorpubliconacionalweb_snnfse-ern-v1-3.pdf" target="_blank" rel="noopener">Guia do Emissor Público Nacional Web v1.3 (31/10/2026)</a>: itens 1.1 (formas de acesso e mensagens do primeiro acesso), 10.3 (recibos de IRPF e título de eleitor) e 11 (alternância de perfis)</li>
+      <li><a href="https://www.gov.br/nfse/pt-br/perguntas-frequentes/perguntas-frequentes-nfs-e-v1-2-20261027.pdf" target="_blank" rel="noopener">Perguntas Frequentes NFS-e v1.2 (27/10/2026)</a>: itens 3.1 a 3.8 e 30.1</li>
+      <li><a href="https://www.gov.br/nfse/pt-br/noticias/nova-funcionalidade-possibilita-representacao-e-alternancia-de-perfis-na-nfs-e" target="_blank" rel="noopener">Portal NFS-e: alternância de perfis e representação (31/10/2026)</a></li>
+      <li><a href="https://www.gov.br/nfse/pt-br/noticias/nfs-e-informa-diretrizes-sobre-a-obrigatoriedade-da-emissao-da-nfs-e-nacional-para-optantes-do-simples-nacional" target="_blank" rel="noopener">Portal NFS-e: diretrizes da obrigatoriedade para o Simples Nacional (29/10/2026)</a></li>
+      <li><a href="https://www.gov.br/nfse/pt-br/canais-de-atendimento" target="_blank" rel="noopener">Portal NFS-e: canais de atendimento</a></li>
+      <li><a href="https://www.gov.br/nfse/pt-br/municipios/monitoramento-adesoes" target="_blank" rel="noopener">Portal NFS-e: monitoramento de adesões dos municípios</a></li>
+      <li><a href="https://www.nfse.gov.br/EmissorNacional" target="_blank" rel="noopener">Emissor Nacional da NFS-e (login)</a></li>
+      <li><a href="https://www.gov.br/governodigital/pt-br/identidade/conta-gov-br/niveis-da-conta-govbr" target="_blank" rel="noopener">gov.br: níveis da conta (bronze, prata, ouro)</a></li>
+      <li><a href="https://www.contabeis.com.br/forum/tributos-estaduais-municipais/415786/emissao-de-nfs-e-pelo-emissor-nacional-sao-paulo-sp/" target="_blank" rel="noopener">Fórum Contábeis: relatos da mensagem "lista de municípios" (out/2026; relato de usuários, não oficial)</a></li>
+    </ul></section>
+    </article>
+
+    <nav class="card related" aria-label="Guias relacionados">
+      <h2>Guias relacionados</h2>
+      <ul>
+        <li><a href="../../nfse-campinas/erros-emissor-nacional-nfse/">Erros comuns no Emissor Nacional (Campinas)</a></li>
+        <li><a href="../../nfse-campinas/emissor-nacional-passo-a-passo/">Emissor Nacional passo a passo</a></li>
+        <li><a href="../../nfse-campinas/primeira-nota-novembro-simples/">Primeira nota de novembro no Emissor Nacional</a></li>
+        <li><a href="../../nfse-campinas/checklist-migracao-nfse-campinas/">Checklist de migração (versão para imprimir)</a></li>
+        <li><a href="../modelo-comunicado-clientes-simples/">Modelos grátis de comunicado aos clientes do Simples</a></li>
+        <li><a href="../kit-escritorios-contabeis/">Kit Virada NFS-e Nacional para escritórios contábeis</a></li>
+      </ul>
+    </nav>
+    <footer>GABF · conteúdo informativo, sem garantia de conformidade · <a href="../../">todas as ferramentas</a> · <a href="../../aviso/">aviso legal</a></footer>
+  </div>
+</body>
+</html>

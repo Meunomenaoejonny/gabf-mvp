@@ -111,7 +111,7 @@
   /* ---------- banner "É escritório contábil?" (páginas NFS-e sem bloco de compra) ---------- */
   (function () {
     var p = location.pathname;
-    if (!/\/(nfse-campinas|nfse-nacional)\//.test(p) || document.querySelector("[data-buy]")) return;
+    if (!/\/(nfse-campinas|nfse-nacional)\//.test(p) || document.querySelector("[data-buy],[data-b2b-cta]")) return;
     var href = /\/nfse-campinas\//.test(p) ? SHOP.kitCampinas : SHOP.kitNacional;
     var anchor = document.querySelector("nav.related") || document.querySelector("footer");
     if (!anchor) return;
