@@ -1,4 +1,5 @@
-/* GABF — widgets v3 (2026-10-23). v2 + (a) bloco de compra [data-buy] com 3 modos (off | kiwify | pix), trocados só na
+/* GABF — widgets v4 (2026-11-03). v3 + chave de compra sem prefixo duplicado (click- é adicionado só pelo count.js).
+   v3: (a) bloco de compra [data-buy] com 3 modos (off | kiwify | pix), trocados só na
    constante SHOP abaixo; (b) banner "É escritório contábil?" nas páginas NFS-e; (c) captura de e-mail desligável
    (CAPTURE_ON): o dono não envia e-mails, então nenhum texto promete envio manual. A variante B2B deixa de prometer
    "enviaremos o kit": o kit é entregue pelo checkout. */
@@ -83,7 +84,7 @@
   document.querySelectorAll("[data-buy]").forEach(function (a) {
     var st = a.parentNode && a.parentNode.parentNode ? a.parentNode.parentNode.querySelector("[data-buy-status]") : null;
     var variant = a.getAttribute("data-buy") || "nac";
-    var counterKey = variant === "b2b" ? "click-b2b-comprar" : (variant === "modelos" ? "click-nac-comprar-modelos" : "click-nac-comprar");
+    var counterKey = variant === "b2b" ? "b2b-comprar" : (variant === "modelos" ? "nac-comprar-modelos" : "nac-comprar");
     if (SHOP.mode === "kiwify" && SHOP.kiwify) {
       a.href = SHOP.kiwify; a.rel = "noopener";
       a.textContent = "Comprar o kit por R$ 97 (PIX ou cartão)";
