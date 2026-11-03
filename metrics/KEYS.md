@@ -60,6 +60,26 @@ O contador v3 separa robô de pessoa, conta engajamento e origem, e registra eve
 |-------|-----------|
 | `click-cal-{page}` | Usuário clicou em "Pôr lembrete na agenda" |
 
+### Clique em comprar (click-*-comprar)
+
+| Chave | Página | Descrição |
+|-------|--------|-----------|
+| `click-b2b-comprar` | `/nfse-campinas/para-escritorios-contabeis/` | Clique no botão de compra do kit B2B |
+| `click-nac-comprar` | `/nfse-nacional/kit-escritorios-contabeis/` | Clique no botão de compra do kit nacional |
+| `click-nac-comprar-modelos` | Página de modelos (CTA de compra) | Clique no CTA de compra na página de modelos |
+
+### Clique no Pix "Já paguei" (click-pix-ja-paguei-*)
+
+| Chave | Descrição |
+|-------|-----------|
+| `click-pix-ja-paguei-{page}` | Usuário clicou no formulário "Já paguei" no modo PIX |
+
+### Clique no Banner B2B (click-banner-b2b-*)
+
+| Chave | Descrição |
+|-------|-----------|
+| `click-banner-b2b-{page}` | Usuário clicou no banner "É escritório contábil?" em páginas NFS-e |
+
 ### Clique no Link do Kit (click-kit-*)
 
 | Chave | Descrição |
@@ -93,10 +113,20 @@ Exemplos:
 - `src-hub-google`
 - `src-nfse-linkedin`
 
-## Chaves Antigas (v1/v2, compatibilidade)
+## Chaves Antigas (v1/v2/v3, compatibilidade)
 
 As chaves `pv-*` continuam com o mesmo nome (série histórica preservada).
 As chaves `click-form-*` param de subir conforme o widget substitui o Google Form direto.
+
+### Chaves legadas do widget v3 (23/10/2026 a 03/11/2026)
+
+Gravadas por engano pelo widget v3 (prefixo duplicado). O leitor local (`read_visits.sh` v6) soma essas chaves às novas.
+
+| Chave legada | Chave correta |
+|--------------|---------------|
+| `click-click-b2b-comprar` | `click-b2b-comprar` |
+| `click-click-nac-comprar` | `click-nac-comprar` |
+| `click-click-nac-comprar-modelos` | `click-nac-comprar-modelos` |
 
 | Chave | Descrição | Formulário |
 |-------|-----------|------------|
@@ -125,4 +155,4 @@ As chaves `click-form-*` param de subir conforme o widget substitui o Google For
 - Chaves nascem no Abacus no primeiro hit, sem cadastro prévio
 
 ---
-Atualizado em: 19/10/2026
+Atualizado em: 03/11/2026
