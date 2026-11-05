@@ -29,6 +29,11 @@ O contador v3 separa robô de pessoa, conta engajamento e origem, e registra eve
 | `pv-b2b-escritorios` | Kit para escritórios contábeis | `/nfse-campinas/para-escritorios-contabeis/` |
 | `pv-orcamento` | Orçamento em PDF (waitlist) | `/orcamento-fakedoor/` |
 | `pv-erros-primeiro-acesso` | Primeiro acesso ao Emissor Nacional e erros de login | `/nfse-nacional/erros-emissor-nacional-primeiro-acesso/` |
+| `pv-nac-kit` | Kit NFS-e Nacional para escritórios | `/nfse-nacional/kit-escritorios-contabeis/` |
+| `pv-nac-modelos` | Modelos de comunicado NFS-e | `/nfse-nacional/modelo-comunicado-clientes-simples/` |
+| `pv-erro-competencia` | Erro de competência no Emissor Nacional | `/nfse-nacional/erro-competencia-emissor-nacional/` |
+| `pv-erro-nbs` | Erro E0316 (NBS inexistente) | `/nfse-nacional/erro-e0316-nbs-emissor-nacional/` |
+| `pv-ibs-cbs-2027` | IBS e CBS no Simples em 2027 | `/nfse-nacional/ibs-cbs-simples-2027/` |
 
 ### Detecção de Bot (bot-*)
 
@@ -67,6 +72,13 @@ O contador v3 separa robô de pessoa, conta engajamento e origem, e registra eve
 | `click-b2b-comprar` | `/nfse-campinas/para-escritorios-contabeis/` | Clique no botão de compra do kit B2B |
 | `click-nac-comprar` | `/nfse-nacional/kit-escritorios-contabeis/` | Clique no botão de compra do kit nacional |
 | `click-nac-comprar-modelos` | Página de modelos (CTA de compra) | Clique no CTA de compra na página de modelos |
+| `click-cta-kit-erro-competencia` | Página erro de competência | CTA do kit na página de erro de competência |
+| `click-cta-kit-erro-nbs` | Página erro E0316 | CTA do kit na página de erro E0316 |
+| `click-cta-kit-ibs-cbs-2027` | Página IBS/CBS 2027 | CTA do kit na página de IBS/CBS 2027 |
+
+**Nota:** `click-cal-{page}` vale também para as páginas novas (`cal-erro-competencia`, `cal-erro-nbs`, `cal-ibs-cbs-2027`).
+
+**Nota sobre compra:** desde este PR, `click-b2b-comprar` e `click-nac-comprar-modelos` voltam a ser gravados separados de `click-nac-comprar`. Entre o widget v4 e este merge, foram somados em `click-nac-comprar` (bug do `data-buy` vazio).
 
 ### Clique no Pix "Já paguei" (click-pix-ja-paguei-*)
 
@@ -155,4 +167,4 @@ Gravadas por engano pelo widget v3 (prefixo duplicado). O leitor local (`read_vi
 - Chaves nascem no Abacus no primeiro hit, sem cadastro prévio
 
 ---
-Atualizado em: 03/11/2026
+Atualizado em: 04/11/2026

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Erro E0316 no Emissor Nacional: NBS inexistente e IBS/CBS</title>
+  <meta name="description" content="O que significa o erro E0316 (código NBS inexistente), por que a combinação de NBS com cClassTrib é recusada e o que vale para o grupo IBS/CBS em 2026." />
+  <link rel="canonical" href="https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erro-e0316-nbs-emissor-nacional/" />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="alternate" hreflang="pt-BR" href="https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erro-e0316-nbs-emissor-nacional/" />
+  <link rel="alternate" hreflang="x-default" href="https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erro-e0316-nbs-emissor-nacional/" />
+  <meta name="theme-color" content="#0969da" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="GABF — ferramentas para MEI e prestadores" />
+  <meta property="og:title" content="Erro E0316 no Emissor Nacional: NBS inexistente e IBS/CBS" />
+  <meta property="og:description" content="O que significa o erro E0316 (código NBS inexistente), por que a combinação de NBS com cClassTrib é recusada e o que vale para o grupo IBS/CBS em 2026." />
+  <meta property="og:url" content="https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erro-e0316-nbs-emissor-nacional/" />
+  <meta property="og:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Erro E0316 no Emissor Nacional: NBS inexistente e IBS/CBS" />
+  <meta name="twitter:description" content="O que significa o erro E0316 (código NBS inexistente), por que a combinação de NBS com cClassTrib é recusada e o que vale para o grupo IBS/CBS em 2026." />
+  <meta name="twitter:image" content="https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Erro E0316 no Emissor Nacional (código NBS inexistente) e a combinação NBS × cClassTrib",
+  "inLanguage": "pt-BR",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "mainEntityOfPage": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erro-e0316-nbs-emissor-nacional/",
+  "author": {
+    "@type": "Organization",
+    "name": "GABF"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GABF"
+  },
+  "image": "https://meunomenaoejonny.github.io/gabf-mvp/assets/og-nfse-campinas.png"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é o erro E0316?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "E0316 significa que o código NBS informado não pertence à versão 2.0 da tabela nacional (Anexo B do Manual Integrado). Via API, o campo cNBS deve ter 9 dígitos válidos dessa tabela. A prefeitura não corrige, porque a tabela é nacional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A prefeitura pode corrigir o E0316?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. A tabela NBS é nacional; se o erro persistir, o contribuinte ou contador deve reportar ao Comitê Gestor da NFS-e."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Se eu não preencher IBS/CBS a nota é rejeitada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Até 31/12/2026, não. A nota é aceita, mas fica em desconformidade, sujeita às sanções do Ato Conjunto. Se você preencher o grupo IBS/CBS, todos os campos dele passam a ser obrigatórios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "MEI precisa informar NBS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para o MEI, recomenda-se a Emissão Simplificada; o NBS só é obrigatório em cenários específicos, como exportação ou importação. Fonte: FAQ NFS-e v1.2, item 27.1."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "GABF",
+      "item": "https://meunomenaoejonny.github.io/gabf-mvp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "NFS-e Nacional",
+      "item": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/kit-escritorios-contabeis/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Erro E0316 (NBS)",
+      "item": "https://meunomenaoejonny.github.io/gabf-mvp/nfse-nacional/erro-e0316-nbs-emissor-nacional/"
+    }
+  ]
+}
+  </script>
+  <script src="../../assets/count.js" data-page="erro-nbs" defer></script>
+  <link rel="stylesheet" href="../../assets/gabf-widgets.css?v=5" />
+  <script src="../../assets/gabf-widgets.js?v=5" defer></script>
+  <style>
+    :root{--bg:#f4f7fb;--surface:#fff;--text:#1a2332;--muted:#5a6b80;--border:#d0dae6;--accent:#0969da;--warn:#9a6700;--ok:#1a7f37;--danger:#cf222e;--radius:12px}
+    @media (prefers-color-scheme:dark){:root{--bg:#0f1419;--surface:#1a2332;--text:#e8eef6;--muted:#8b9cb3;--border:#2d3a4f;--accent:#4493f8;--warn:#d29922;--ok:#3fb950;--danger:#f85149}}
+    *{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:1.25rem}
+    .wrap{max-width:720px;margin:0 auto}a{color:var(--accent)}h1{font-size:1.6rem;line-height:1.25;margin:.3rem 0 .6rem}h2{font-size:1.15rem;margin:1.4rem 0 .5rem}h3{font-size:1rem;margin:1.2rem 0 .4rem}
+    .meta{font-size:.8rem;color:var(--muted)}.crumbs{font-size:.8rem}.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.15rem;margin:1rem 0}
+    .disclaimer{font-size:.85rem;border-left:3px solid var(--warn);padding:.7rem .9rem;background:var(--surface);border-radius:0 8px 8px 0;margin:1rem 0}
+    .answer{border-left:4px solid var(--accent)}
+    .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:.8rem 1.1rem;border-radius:8px;margin:.3rem .4rem .3rem 0}
+    ol li,ul li{margin-bottom:.35rem}p{margin:.6rem 0}.sources{font-size:.82rem;word-break:break-word}footer{margin-top:2rem;font-size:.75rem;color:var(--muted);text-align:center}
+    .faq details{border-top:1px solid var(--border);padding:.6rem 0}.faq summary{cursor:pointer;font-size:.92rem}.faq details p{margin-top:.45rem;font-size:.9rem}
+    .faq a,.related a{color:var(--accent)}.related ul{padding-left:1.1rem}.related li{margin-bottom:.35rem;font-size:.92rem}.upd{font-size:.75rem;opacity:.75;margin-top:.6rem}
+    .error-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.15rem;margin:1rem 0;border-left:4px solid var(--danger)}
+    .error-box h3{color:var(--danger);margin-top:0}
+    .solution{background:color-mix(in srgb, var(--ok) 10%, var(--surface));border-left:3px solid var(--ok);padding:.7rem .9rem;border-radius:0 8px 8px 0;margin:.5rem 0}
+    .solution strong{color:var(--ok)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">GABF</a> › <a href="../kit-escritorios-contabeis/">NFS-e Nacional</a> › Erro E0316 (NBS)</p>
+    <article>
+    <h1>Erro E0316 no Emissor Nacional (código NBS inexistente) e a combinação NBS × cClassTrib</h1>
+    <p class="meta">Publicado e atualizado em 04/11/2026 · Conteúdo informativo, <strong>não é assessoria</strong> contábil, jurídica ou fiscal.</p>
+
+    <div class="card answer">
+      <strong>Resposta curta:</strong> O erro E0316 significa que o código NBS informado não pertence à versão 2.0 da tabela nacional (Anexo B do Manual Integrado). Em 2026, deixar o grupo IBS/CBS em branco não rejeita a nota; mas, se você preencher o grupo, todos os campos dele passam a ser exigidos.
+    </div>
+
+    <div class="disclaimer"><strong>Atenção:</strong> os códigos e explicações abaixo vêm das Perguntas Frequentes NFS-e v1.2 (27/10/2026) e das notas do CGNFS-e. Para o seu caso concreto, fale com o contador ou com a prefeitura.</div>
+
+    <div class="error-box">
+      <h3>E0316 — Código NBS inexistente na tabela do sistema</h3>
+      <p><strong>O que significa:</strong> O código NBS informado não pertence à versão 2.0 da tabela nacional (Anexo B do Manual Integrado). Via API, o campo <code>&lt;cNBS&gt;</code> deve ter 9 dígitos válidos da tabela 2.0.</p>
+      <div class="solution"><strong>O que fazer:</strong> Confira se o NBS está correto e atualizado conforme a tabela 2.0. A prefeitura não corrige a tabela, porque ela é nacional; se o erro persistir, reporte ao Comitê Gestor da NFS-e.</div>
+    </div>
+
+    <h2>A Calculadora IBS/CBS recusa meu NBS com o cClassTrib</h2>
+    <p>Segundo o FAQ v1.2, item 27.2, a Calculadora IBS/CBS recusa a combinação NBS × cClassTrib quando ela não consta do <strong>Anexo VIII</strong>. Primeiro confirme se o NBS descreve corretamente o serviço prestado e depois ajuste o cClassTrib para uma combinação válida.</p>
+
+    <h2>Preencher ou não o grupo IBS/CBS agora?</h2>
+    <p>O grupo IBS/CBS está aberto no Ambiente de Dados Nacional. Pelo Ato Conjunto RFB/CGIBS nº 4/2026 (CGNFS-e, 07/08/2026):</p>
+    <ul>
+      <li><strong>01/10/2026:</strong> serviços da LC 116 em geral devem informar IBS/CBS.</li>
+      <li><strong>01/12/2026:</strong> plataformas digitais, subitens 1.03, 1.05, 1.09 e 16.01, bens imateriais, locações e demais casos.</li>
+      <li><strong>01/01/2027:</strong> optantes do Simples que optaram pelo destaque em setembro de 2026.</li>
+    </ul>
+    <p>Até 31/12/2026, a ausência do IBS/CBS <strong>não rejeita</strong> a nota, mas mostra "desconformidade", sujeita às sanções do Ato Conjunto. Se você <strong>optar</strong> por preencher, todos os códigos e classificações do grupo passam a ser obrigatórios, inclusive os dados do adquirente quando o tipo de operação exigir.</p>
+    <p>A Nota Técnica 009 está em produção restrita (testes) e os "releases 1 a 3" deverão estar em produção em 01/12/2026, conforme o CGNFS-e (29/10/2026).</p>
+
+    <h2>MEI</h2>
+    <p>Para o MEI, recomenda-se a Emissão Simplificada; o NBS só é obrigatório em cenários específicos, como exportação ou importação (FAQ v1.2, item 27.1).</p>
+
+    <div data-agenda></div>
+
+    <aside class="card" data-b2b-cta>
+      <strong>Para escritórios (pago):</strong> O <a href="../kit-escritorios-contabeis/" data-count="cta-kit-erro-nbs">Kit Virada NFS-e Nacional</a> traz guia do cliente editável, comunicados prontos e planilha de triagem. R$ 97, entrega digital e garantia de 7 dias.
+    </aside>
+
+    <section class="card faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Perguntas frequentes</h2>
+      <details><summary><strong>O que é o erro E0316?</strong></summary><p>E0316 significa que o código NBS informado não pertence à versão 2.0 da tabela nacional (Anexo B do Manual Integrado). Via API, o campo cNBS deve ter 9 dígitos válidos dessa tabela. A prefeitura não corrige, porque a tabela é nacional.</p></details>
+      <details><summary><strong>A prefeitura pode corrigir o E0316?</strong></summary><p>Não. A tabela NBS é nacional; se o erro persistir, o contribuinte ou contador deve reportar ao Comitê Gestor da NFS-e.</p></details>
+      <details><summary><strong>Se eu não preencher IBS/CBS a nota é rejeitada?</strong></summary><p>Até 31/12/2026, não. A nota é aceita, mas fica em desconformidade, sujeita às sanções do Ato Conjunto. Se você preencher o grupo IBS/CBS, todos os campos dele passam a ser obrigatórios.</p></details>
+      <details><summary><strong>MEI precisa informar NBS?</strong></summary><p>Para o MEI, recomenda-se a Emissão Simplificada; o NBS só é obrigatório em cenários específicos, como exportação ou importação. Fonte: FAQ NFS-e v1.2, item 27.1.</p></details>
+      <p class="upd">Atualizado em 04/11/2026. Não é assessoria contábil, jurídica ou fiscal.</p>
+    </section>
+
+    <section class="card sources"><h2>Fontes (consultadas em 04/11/2026)</h2><ul>
+      <li><a href="https://www.gov.br/nfse/pt-br/perguntas-frequentes/perguntas-frequentes-nfs-e-v1-2-20261027.pdf" target="_blank" rel="noopener">Perguntas Frequentes NFS-e v1.2 (27/10/2026) — itens 27.1 e 27.2</a></li>
+      <li><a href="https://www.gov.br/nfse/pt-br/noticias/cgnfs-e-orienta-sobre-os-prazos-para%20destaque-de-ibs-cbs-nas-notas-fiscais-de-servico" target="_blank" rel="noopener">CGNFS-e — Prazos para IBS/CBS (07/08/2026)</a></li>
+      <li><a href="https://www.gov.br/nfse/pt-br/noticias/nfs-e-nacional-confira-oas-rientacoes-sobre-leiaute-em-producao-regras-de-preenchimento-de-ibs-cbs-e-status-da-nota-tecnica-009" target="_blank" rel="noopener">CGNFS-e — Leiaute em produção e NT 009 (29/10/2026)</a></li>
+      <li><a href="https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica" target="_blank" rel="noopener">Portal NFS-e — Documentação técnica</a></li>
+    </ul></section>
+    </article>
+
+    <nav class="card related" aria-label="Guias relacionados">
+      <h2>Guias relacionados</h2>
+      <ul>
+        <li><a href="../erro-competencia-emissor-nacional/">Erro de competência no Emissor Nacional</a></li>
+        <li><a href="../ibs-cbs-simples-2027/">IBS e CBS no Simples Nacional em 2027</a></li>
+        <li><a href="../erros-emissor-nacional-primeiro-acesso/">Primeiro acesso ao Emissor Nacional e erros de login</a></li>
+        <li><a href="../../nfse-campinas/erros-emissor-nacional-nfse/">Erros comuns no Emissor Nacional (Campinas)</a></li>
+        <li><a href="../../nfse-campinas/prazos-nfse-campinas-2026/">Prazos NFS-e Campinas 2026</a></li>
+        <li><a href="../../nfse-campinas/nfse-campinas-ti-software-plataformas/">TI, software e plataformas (1º/12)</a></li>
+      </ul>
+    </nav>
+    <footer>GABF · conteúdo informativo, sem garantia de conformidade · <a href="../../">todas as ferramentas</a> · <a href="../../aviso/">aviso legal</a></footer>
+  </div>
+</body>
+</html>

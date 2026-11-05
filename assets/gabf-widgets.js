@@ -1,4 +1,5 @@
-/* GABF — widgets v4 (2026-11-03). v3 + chave de compra sem prefixo duplicado (click- é adicionado só pelo count.js).
+/* GABF — widgets v5 (2026-11-04): nota da agenda com fontes oficiais.
+   v4: chave de compra sem prefixo duplicado (click- é adicionado só pelo count.js).
    v3: (a) bloco de compra [data-buy] com 3 modos (off | kiwify | pix), trocados só na
    constante SHOP abaixo; (b) banner "É escritório contábil?" nas páginas NFS-e; (c) captura de e-mail desligável
    (CAPTURE_ON): o dono não envia e-mails, então nenhum texto promete envio manual. A variante B2B deixa de prometer
@@ -24,7 +25,7 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   var AFTER_NOV1 = Date.now() >= new Date("2026-11-01T00:00:00-03:00").getTime();
 
-  /* ---------- agenda de prazos (datas fixas, fontes: RFB + Prefeitura de Campinas via imprensa) ---------- */
+  /* ---------- agenda de prazos (datas fixas, fontes: RFB, Portal NFS-e e Prefeitura de Campinas (campinas.sp.gov.br)) ---------- */
   var STEPS = [
     { d: "2026-10-01", t: "1º/10/2026", x: "Campinas, fora do Simples: novo emissor municipal obrigatório para a regra geral do ISS (exceto atividades de dezembro)." },
     { d: "2026-11-01", t: "1º/11/2026", x: "Simples ME/EPP: Emissor Nacional obrigatório e exclusivo (Res. CGSN 191/2026). 2/11 é Finados: 1º dia útil é 3/11." },
@@ -40,7 +41,7 @@
       ? { t: "NFS-e Simples: IBS/CBS no documento fiscal (1º/01/2027)", d: "20261228/20261229", x: "Lembrete: a partir de 1º/01/2027 as regras de IBS/CBS produzem efeitos no documento fiscal do Simples. Fontes: https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/ — confirme com seu contador.", l: "Pôr lembrete de 28/12 (IBS/CBS) na minha agenda" }
       : { t: "NFS-e: Simples ME/EPP no Emissor Nacional (1º/11)", d: "20261029/20261030", x: "Lembrete: a partir de 1º/11/2026 ME/EPP do Simples emitem NFS-e só pelo Emissor Nacional. 2/11 é Finados. Checklist: https://meunomenaoejonny.github.io/gabf-mvp/nfse-campinas/ — confirme com seu contador.", l: "Pôr lembrete de 29/10 na minha agenda (Google Agenda)" };
     var gcal = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(cal.t) + "&dates=" + cal.d + "&details=" + encodeURIComponent(cal.x);
-    box.appendChild(el('<div class="agenda">' + head + '<ul>' + rows + '</ul><p><a class="ag-cal" target="_blank" rel="noopener" data-count="cal-' + page() + '" href="' + gcal + '">' + cal.l + '</a></p><p class="ag-note">Cronograma resumido de fontes oficiais (RFB e Prefeitura de Campinas, via imprensa). Confirme seu enquadramento na Secretaria Municipal de Finanças. Não é assessoria.</p></div>'));
+    box.appendChild(el('<div class="agenda">' + head + '<ul>' + rows + '</ul><p><a class="ag-cal" target="_blank" rel="noopener" data-count="cal-' + page() + '" href="' + gcal + '">' + cal.l + '</a></p><p class="ag-note">Cronograma resumido de fontes oficiais (Receita Federal, Portal NFS-e e Prefeitura de Campinas). Confirme seu enquadramento na Secretaria Municipal de Finanças. Não é assessoria.</p></div>'));
   });
 
   /* ---------- captura de 1 campo (+ variante B2B) ---------- */
